@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1180" viewBox="0 0 1920 1180">
+<defs><marker id="m6b7280" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker><marker id="m9aa3b8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa3b8"/></marker><marker id="m8a94ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94ad"/></marker><marker id="mB7791F" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B7791F"/></marker><marker id="m7D3C98" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7D3C98"/></marker><marker id="m2F6FDE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6FDE"/></marker><marker id="mC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="m1E8449" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E8449"/></marker><marker id="m1E2761" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E2761"/></marker></defs><rect width="1920" height="1180" fill="#F6F8FC"/>
+<rect width="1920" height="8" fill="#1E2761"/>
+<text x="60" y="62" font-family="DejaVu Sans" font-size="36" fill="#1E2761" font-weight="bold" text-anchor="start">5 · Logging seguro y degradación controlada</text>
+<text x="60" y="96" font-family="DejaVu Sans" font-size="19" fill="#5d6780" font-weight="normal" text-anchor="start">Requisitos no funcionales: auditoría sin fugas y errores claros sin trazas internas</text>
+<text x="1860" y="62" font-family="DejaVu Sans" font-size="16" fill="#5d6780" font-weight="normal" text-anchor="end">Gateway LLM · Arquitectura · Logging y resiliencia</text>
+<text x="1860" y="86" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="end">Proyecto Final Opción 4 · Fundamentos de Arquitectura LLM</text>
+<rect x="40" y="130" width="900" height="960" rx="18" fill="#FFFBF3" stroke="#B7791F" stroke-width="2"/><text x="60" y="160" font-family="DejaVu Sans" font-size="19" fill="#B7791F" font-weight="bold" text-anchor="start">Logging estructurado seguro (LLM02)</text>
+<rect x="70" y="180" width="840" height="84" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="70" y="180" width="8" height="84" rx="3" fill="#6b7280"/>
+<text x="92" y="212" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Evento de auditoría</text>
+<text x="92" y="242" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">middleware · registrar(&quot;solicitud&quot;, **campos)</text>
+<line x1="490" y1="264" x2="490" y2="286" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="70" y="288" width="840" height="84" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="70" y="288" width="8" height="84" rx="3" fill="#B7791F"/>
+<text x="92" y="320" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Barrera 1 · Allowlist</text>
+<text x="92" y="350" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">campo ∉ CAMPOS_PERMITIDOS → se descarta</text>
+<line x1="490" y1="372" x2="490" y2="394" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="70" y="396" width="840" height="84" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="70" y="396" width="8" height="84" rx="3" fill="#B7791F"/>
+<text x="92" y="428" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Barrera 2 · Redacción</text>
+<text x="92" y="458" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">sk-… · sk-ant-… · AIza… · gw_… · Bearer … · ?key= · correos → [REDACTADO]</text>
+<line x1="490" y1="480" x2="490" y2="502" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="70" y="504" width="840" height="84" rx="12" fill="#FFFFFF" stroke="#2F6FDE" stroke-width="2"/>
+<rect x="70" y="504" width="8" height="84" rx="3" fill="#2F6FDE"/>
+<text x="92" y="536" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Línea JSON</text>
+<text x="92" y="566" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">stdout + logs/gateway.jsonl → SIEM / Cloud Logging</text>
+<rect x="70" y="630" width="405" height="330" rx="12" fill="#FFFFFF" stroke="#1E8449" stroke-width="2"/>
+<rect x="70" y="630" width="8" height="330" rx="3" fill="#1E8449"/>
+<text x="92" y="662" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">SÍ se registra</text>
+<text x="92" y="693" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">timestamp · nivel · evento</text>
+<text x="92" y="716" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">request_id · endpoint · método</text>
+<text x="92" y="739" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">estado_http · resultado</text>
+<text x="92" y="762" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">latencia_ms</text>
+<text x="92" y="785" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">cliente_id (nombre#hash)</text>
+<text x="92" y="808" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">proveedor · modelo · tokens</text>
+<text x="92" y="831" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">longitud_mensaje</text>
+<text x="92" y="854" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">categorias_bloqueo</text>
+<text x="92" y="877" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">puntaje_inyeccion · motivo_fuga</text>
+<text x="92" y="900" font-family="DejaVu Sans Mono" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">tipo_error · degradado</text>
+<rect x="505" y="630" width="405" height="330" rx="12" fill="#FFFFFF" stroke="#C0392B" stroke-width="2"/>
+<rect x="505" y="630" width="8" height="330" rx="3" fill="#C0392B"/>
+<text x="527" y="662" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">NUNCA se registra</text>
+<text x="527" y="693" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">Prompt del usuario</text>
+<text x="527" y="716" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">  → puede traer PII</text>
+<text x="527" y="739" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">Respuesta del modelo</text>
+<text x="527" y="762" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">Cabeceras (Authorization)</text>
+<text x="527" y="785" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">  → credencial reutilizable</text>
+<text x="527" y="808" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">API keys / claves gw_</text>
+<text x="527" y="831" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">System prompt y canario</text>
+<text x="527" y="854" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">  → anularía LLM07</text>
+<text x="527" y="877" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">Detalle de errores upstream</text>
+<text x="527" y="900" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">  → URLs con ?key=</text>
+<rect x="70" y="980" width="840" height="90" rx="12" fill="#FFFFFF" stroke="#1E8449" stroke-width="2"/>
+<rect x="70" y="980" width="8" height="90" rx="3" fill="#1E8449"/>
+<text x="92" y="1012" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Para depurar basta con</text>
+<text x="92" y="1042" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">request_id + longitud_mensaje + tipo_error + categorias_bloqueo (sin ver el contenido)</text>
+<rect x="980" y="130" width="900" height="960" rx="18" fill="#EEF2FB" stroke="#1E2761" stroke-width="2"/><text x="1000" y="160" font-family="DejaVu Sans" font-size="19" fill="#1E2761" font-weight="bold" text-anchor="start">Degradación controlada ante fallos upstream</text>
+<rect x="1010" y="180" width="840" height="84" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1010" y="180" width="8" height="84" rx="3" fill="#6b7280"/>
+<text x="1032" y="212" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">proveedores.completar_con_respaldo()</text>
+<text x="1032" y="242" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Todo error de red/HTTP se convierte en ErrorProveedor(tipo) · detalle interno nunca sale</text>
+<line x1="1430" y1="264" x2="1430" y2="300" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<polygon points="1430,302 1560,352 1430,402 1300,352" fill="#FFFFFF" stroke="#1E2761" stroke-width="2"/>
+<text x="1430" y="346" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="bold" text-anchor="middle">¿PROVEEDOR_</text>
+<text x="1430" y="366" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="bold" text-anchor="middle">RESPALDO?</text>
+<line x1="1560" y1="352" x2="1640" y2="352" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/><text x="1600.0" y="342.0" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">sí</text>
+<rect x="1645" y="312" width="205" height="84" rx="12" fill="#FFFFFF" stroke="#1E8449" stroke-width="2"/>
+<rect x="1645" y="312" width="8" height="84" rx="3" fill="#1E8449"/>
+<text x="1667" y="344" font-family="DejaVu Sans" font-size="17" fill="#1f2433" font-weight="bold" text-anchor="start">200 · degradado</text>
+<text x="1667" y="372" font-family="DejaVu Sans" font-size="13" fill="#3a4254" font-weight="normal" text-anchor="start">proveedor_fallido en log</text>
+<line x1="1430" y1="402" x2="1430" y2="450" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/><text x="1442.0" y="418.0" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="start">no / también falla</text>
+<rect x="1010" y="460" width="840" height="88" rx="10" fill="#FFFFFF" stroke="#dde2ee"/>
+<rect x="1010" y="460" width="110" height="88" rx="10" fill="#B7791F"/>
+<text x="1065" y="514" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="middle">504</text>
+<text x="1140" y="494" font-family="DejaVu Sans Mono" font-size="16" fill="#1f2433" font-weight="bold" text-anchor="start">timeout</text>
+<text x="1140" y="524" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">El proveedor no respondió a tiempo. Intente en unos segundos.</text>
+<rect x="1010" y="564" width="840" height="88" rx="10" fill="#FFFFFF" stroke="#dde2ee"/>
+<rect x="1010" y="564" width="110" height="88" rx="10" fill="#B7791F"/>
+<text x="1065" y="618" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="middle">503</text>
+<text x="1140" y="598" font-family="DejaVu Sans Mono" font-size="16" fill="#1f2433" font-weight="bold" text-anchor="start">no_disponible (5xx, conexión)</text>
+<text x="1140" y="628" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">Servicio de IA no disponible temporalmente.</text>
+<rect x="1010" y="668" width="840" height="88" rx="10" fill="#FFFFFF" stroke="#dde2ee"/>
+<rect x="1010" y="668" width="110" height="88" rx="10" fill="#B7791F"/>
+<text x="1065" y="722" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="middle">503</text>
+<text x="1140" y="702" font-family="DejaVu Sans Mono" font-size="16" fill="#1f2433" font-weight="bold" text-anchor="start">saturado (429 del proveedor)</text>
+<text x="1140" y="732" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">Proveedor saturado. Intente en un minuto.</text>
+<rect x="1010" y="772" width="840" height="88" rx="10" fill="#FFFFFF" stroke="#dde2ee"/>
+<rect x="1010" y="772" width="110" height="88" rx="10" fill="#B7791F"/>
+<text x="1065" y="826" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="middle">502</text>
+<text x="1140" y="806" font-family="DejaVu Sans Mono" font-size="16" fill="#1f2433" font-weight="bold" text-anchor="start">configuracion (400/401/403/404, sin key)</text>
+<text x="1140" y="836" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">Contacte al equipo de plataforma con el request_id.</text>
+<rect x="1010" y="876" width="840" height="88" rx="10" fill="#FFFFFF" stroke="#dde2ee"/>
+<rect x="1010" y="876" width="110" height="88" rx="10" fill="#C0392B"/>
+<text x="1065" y="930" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="middle">500</text>
+<text x="1140" y="910" font-family="DejaVu Sans Mono" font-size="16" fill="#1f2433" font-weight="bold" text-anchor="start">excepción no prevista</text>
+<text x="1140" y="940" font-family="DejaVu Sans" font-size="16" fill="#3a4254" font-weight="normal" text-anchor="start">Error interno genérico (middleware de auditoría).</text>
+<text x="1010" y="1060" font-family="DejaVu Sans" font-size="16" fill="#1E2761" font-weight="bold" text-anchor="start">ENTORNO=produccion con una mitigación apagada → el gateway no arranca (RuntimeError).</text>
+<text x="60" y="1158" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="bold" text-anchor="start">Leyenda OWASP:</text>
+<rect x="200" y="1140" width="227.92" height="25" rx="12.5" fill="#C0392B"/><text x="313.96" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM01 Prompt Injection</text><rect x="441.91999999999996" y="1140" width="377.68" height="25" rx="12.5" fill="#B7791F"/><text x="630.76" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM02 Sensitive Information Disclosure</text><rect x="833.5999999999999" y="1140" width="274.72" height="25" rx="12.5" fill="#7D3C98"/><text x="970.9599999999999" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM07 System Prompt Leakage</text><rect x="1122.32" y="1140" width="274.72" height="25" rx="12.5" fill="#1E8449"/><text x="1259.6799999999998" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM10 Unbounded Consumption</text>
+</svg>

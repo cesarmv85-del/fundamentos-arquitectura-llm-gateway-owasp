@@ -7,8 +7,8 @@ main.py — Gateway LLM con seguridad OWASP (Proyecto Final · Opción 4)
 Flujo de una solicitud (cada paso vive en su propio módulo):
 
   cliente ─► [LímiteBody ASGI] ─► [auth.py: clave gw_ → cliente_id]
+          ─► [Pydantic: longitud máx., techo max_tokens]     LLM10  (422 no consume cuota)
           ─► [slowapi: RATE_LIMIT por cliente_id]            LLM10
-          ─► [Pydantic: longitud máx., techo max_tokens]     LLM10
           ─► [sanitizacion.py: normaliza/detecta/encapsula]  LLM01
           ─► [proveedores.py: único egress + respaldo]       degradación controlada
           ─► [salida.py: canario + n-gramas]                 LLM07

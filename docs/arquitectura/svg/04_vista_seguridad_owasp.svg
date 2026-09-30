@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1180" viewBox="0 0 1920 1180">
+<defs><marker id="m6b7280" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker><marker id="m9aa3b8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa3b8"/></marker><marker id="m8a94ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94ad"/></marker><marker id="mB7791F" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B7791F"/></marker><marker id="m7D3C98" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7D3C98"/></marker><marker id="m2F6FDE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6FDE"/></marker><marker id="mC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="m1E8449" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E8449"/></marker><marker id="m1E2761" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E2761"/></marker></defs><rect width="1920" height="1180" fill="#F6F8FC"/>
+<rect width="1920" height="8" fill="#1E2761"/>
+<text x="60" y="62" font-family="DejaVu Sans" font-size="36" fill="#1E2761" font-weight="bold" text-anchor="start">4 · Vista de seguridad: OWASP → mitigación → módulo → evidencia</text>
+<text x="60" y="96" font-family="DejaVu Sans" font-size="19" fill="#5d6780" font-weight="normal" text-anchor="start">Cada categoría tiene un ataque diseñado antes de implementar, una prueba de línea base y una prueba con la mitigación</text>
+<text x="1860" y="62" font-family="DejaVu Sans" font-size="16" fill="#5d6780" font-weight="normal" text-anchor="end">Gateway LLM · Arquitectura · Seguridad</text>
+<text x="1860" y="86" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="end">Proyecto Final Opción 4 · Fundamentos de Arquitectura LLM</text>
+<rect x="45" y="130" width="440" height="760" rx="16" fill="#FFFFFF" stroke="#C0392B" stroke-width="2.5"/>
+<rect x="45" y="130" width="440" height="78" rx="16" fill="#C0392B"/><rect x="45" y="180" width="440" height="28" fill="#C0392B"/>
+<text x="69" y="166" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="start">LLM01</text>
+<text x="69" y="195" font-family="DejaVu Sans" font-size="18" fill="#fff" font-weight="normal" text-anchor="start">Prompt Injection</text>
+<text x="69" y="240" font-family="DejaVu Sans" font-size="14" fill="#C0392B" font-weight="bold" text-anchor="start">AMENAZA (caso de la Fase 1)</text>
+<text x="69" y="272" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Un cliente reescribe la política de negocio</text>
+<text x="69" y="296" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">(&quot;devoluciones en 365 días&quot;) o la oculta con</text>
+<text x="69" y="320" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">caracteres invisibles.</text>
+<text x="69" y="364" font-family="DejaVu Sans" font-size="14" fill="#C0392B" font-weight="bold" text-anchor="start">CONTROLES</text>
+<circle cx="77" cy="390" r="5" fill="#C0392B"/><text x="91" y="396" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Normalización NFKC + quita invisibles</text>
+<circle cx="77" cy="422" r="5" fill="#C0392B"/><text x="91" y="428" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Detección con puntaje ES/EN</text>
+<circle cx="77" cy="454" r="5" fill="#C0392B"/><text x="91" y="460" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Neutralización de delimitadores</text>
+<circle cx="77" cy="486" r="5" fill="#C0392B"/><text x="91" y="492" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Encapsulado + instrucción de dato</text>
+<circle cx="77" cy="518" r="5" fill="#C0392B"/><text x="91" y="524" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Rechazo 400 antes de gastar tokens</text>
+<text x="69" y="572" font-family="DejaVu Sans" font-size="14" fill="#C0392B" font-weight="bold" text-anchor="start">MÓDULO</text>
+<text x="69" y="600" font-family="DejaVu Sans Mono" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">sanitizacion.py</text>
+<text x="69" y="644" font-family="DejaVu Sans" font-size="14" fill="#C0392B" font-weight="bold" text-anchor="start">EVIDENCIA ANTES / DESPUÉS</text>
+<text x="69" y="670" font-family="DejaVu Sans Mono" font-size="14" fill="#1f2433" font-weight="normal" text-anchor="start">test_llm01_prompt_injection.py</text>
+<text x="69" y="696" font-family="DejaVu Sans Mono" font-size="14" fill="#1f2433" font-weight="normal" text-anchor="start">test_sanitizacion.py (25 casos)</text>
+<rect x="61" y="718" width="408" height="156" rx="10" fill="#FBE9E7"/>
+<text x="75" y="744" font-family="DejaVu Sans" font-size="14" fill="#C0392B" font-weight="bold" text-anchor="start">RIESGO RESIDUAL</text>
+<text x="75" y="768" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">Paráfrasis e inyección indirecta → 2ª</text>
+<text x="75" y="792" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">línea en LLM07</text>
+<rect x="507" y="130" width="440" height="760" rx="16" fill="#FFFFFF" stroke="#B7791F" stroke-width="2.5"/>
+<rect x="507" y="130" width="440" height="78" rx="16" fill="#B7791F"/><rect x="507" y="180" width="440" height="28" fill="#B7791F"/>
+<text x="531" y="166" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="start">LLM02</text>
+<text x="531" y="195" font-family="DejaVu Sans" font-size="18" fill="#fff" font-weight="normal" text-anchor="start">Sensitive Info Disclosure</text>
+<text x="531" y="240" font-family="DejaVu Sans" font-size="14" fill="#B7791F" font-weight="bold" text-anchor="start">AMENAZA (caso de la Fase 1)</text>
+<text x="531" y="272" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">La key del proveedor llega al cliente en un</text>
+<text x="531" y="296" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">error; el log guarda prompts con PII y la</text>
+<text x="531" y="320" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">clave del cliente.</text>
+<text x="531" y="364" font-family="DejaVu Sans" font-size="14" fill="#B7791F" font-weight="bold" text-anchor="start">CONTROLES</text>
+<circle cx="539" cy="390" r="5" fill="#B7791F"/><text x="553" y="396" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">SecretStr + *_FILE (Secret Manager)</text>
+<circle cx="539" cy="422" r="5" fill="#B7791F"/><text x="553" y="428" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Claves de cliente solo como SHA-256</text>
+<circle cx="539" cy="454" r="5" fill="#B7791F"/><text x="553" y="460" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Key de Gemini en cabecera, no en URL</text>
+<circle cx="539" cy="486" r="5" fill="#B7791F"/><text x="553" y="492" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Errores genéricos + request_id</text>
+<circle cx="539" cy="518" r="5" fill="#B7791F"/><text x="553" y="524" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Logs: allowlist + redacción</text>
+<text x="531" y="572" font-family="DejaVu Sans" font-size="14" fill="#B7791F" font-weight="bold" text-anchor="start">MÓDULO</text>
+<text x="531" y="600" font-family="DejaVu Sans Mono" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">config · auth · logging_seguro</text>
+<text x="531" y="644" font-family="DejaVu Sans" font-size="14" fill="#B7791F" font-weight="bold" text-anchor="start">EVIDENCIA ANTES / DESPUÉS</text>
+<text x="531" y="670" font-family="DejaVu Sans Mono" font-size="14" fill="#1f2433" font-weight="normal" text-anchor="start">test_llm02_credenciales.py</text>
+<text x="531" y="696" font-family="DejaVu Sans Mono" font-size="14" fill="#1f2433" font-weight="normal" text-anchor="start">escanear_secretos.py (git + logs)</text>
+<rect x="523" y="718" width="408" height="156" rx="10" fill="#FDF3E1"/>
+<text x="537" y="744" font-family="DejaVu Sans" font-size="14" fill="#B7791F" font-weight="bold" text-anchor="start">RIESGO RESIDUAL</text>
+<text x="537" y="768" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">Metadatos (longitud, tiempos) aún son</text>
+<text x="537" y="792" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">observables</text>
+<rect x="969" y="130" width="440" height="760" rx="16" fill="#FFFFFF" stroke="#7D3C98" stroke-width="2.5"/>
+<rect x="969" y="130" width="440" height="78" rx="16" fill="#7D3C98"/><rect x="969" y="180" width="440" height="28" fill="#7D3C98"/>
+<text x="993" y="166" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="start">LLM07</text>
+<text x="993" y="195" font-family="DejaVu Sans" font-size="18" fill="#fff" font-weight="normal" text-anchor="start">System Prompt Leakage</text>
+<text x="993" y="240" font-family="DejaVu Sans" font-size="14" fill="#7D3C98" font-weight="bold" text-anchor="start">AMENAZA (caso de la Fase 1)</text>
+<text x="993" y="272" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">El atacante obtiene las reglas internas y</text>
+<text x="993" y="296" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">aprende exactamente qué debe evadir.</text>
+<text x="993" y="340" font-family="DejaVu Sans" font-size="14" fill="#7D3C98" font-weight="bold" text-anchor="start">CONTROLES</text>
+<circle cx="1001" cy="366" r="5" fill="#7D3C98"/><text x="1015" y="372" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">System prompt sin secretos</text>
+<circle cx="1001" cy="398" r="5" fill="#7D3C98"/><text x="1015" y="404" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Token canario aleatorio por arranque</text>
+<circle cx="1001" cy="430" r="5" fill="#7D3C98"/><text x="1015" y="436" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Detector de 8-gramas en la salida</text>
+<circle cx="1001" cy="462" r="5" fill="#7D3C98"/><text x="1015" y="468" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Respuesta reemplazada si hay fuga</text>
+<circle cx="1001" cy="494" r="5" fill="#7D3C98"/><text x="1015" y="500" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">El canario nunca se loguea</text>
+<text x="993" y="548" font-family="DejaVu Sans" font-size="14" fill="#7D3C98" font-weight="bold" text-anchor="start">MÓDULO</text>
+<text x="993" y="576" font-family="DejaVu Sans Mono" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">salida.py</text>
+<text x="993" y="620" font-family="DejaVu Sans" font-size="14" fill="#7D3C98" font-weight="bold" text-anchor="start">EVIDENCIA ANTES / DESPUÉS</text>
+<text x="993" y="646" font-family="DejaVu Sans Mono" font-size="14" fill="#1f2433" font-weight="normal" text-anchor="start">test_llm07_fuga_system_prompt.py</text>
+<text x="993" y="672" font-family="DejaVu Sans Mono" font-size="14" fill="#1f2433" font-weight="normal" text-anchor="start">(demo con LLM01 apagado)</text>
+<rect x="985" y="694" width="408" height="180" rx="10" fill="#F4EAF8"/>
+<text x="999" y="720" font-family="DejaVu Sans" font-size="14" fill="#7D3C98" font-weight="bold" text-anchor="start">RIESGO RESIDUAL</text>
+<text x="999" y="744" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">La paráfrasis no se detecta → no guardar</text>
+<text x="999" y="768" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">secretos ahí</text>
+<rect x="1431" y="130" width="440" height="760" rx="16" fill="#FFFFFF" stroke="#1E8449" stroke-width="2.5"/>
+<rect x="1431" y="130" width="440" height="78" rx="16" fill="#1E8449"/><rect x="1431" y="180" width="440" height="28" fill="#1E8449"/>
+<text x="1455" y="166" font-family="DejaVu Sans" font-size="28" fill="#fff" font-weight="bold" text-anchor="start">LLM10</text>
+<text x="1455" y="195" font-family="DejaVu Sans" font-size="18" fill="#fff" font-weight="normal" text-anchor="start">Unbounded Consumption</text>
+<text x="1455" y="240" font-family="DejaVu Sans" font-size="14" fill="#1E8449" font-weight="bold" text-anchor="start">AMENAZA (caso de la Fase 1)</text>
+<text x="1455" y="272" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Una app con bug o un abusador dispara miles</text>
+<text x="1455" y="296" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">de llamadas o pide max_tokens = 50 000.</text>
+<text x="1455" y="340" font-family="DejaVu Sans" font-size="14" fill="#1E8449" font-weight="bold" text-anchor="start">CONTROLES</text>
+<circle cx="1463" cy="366" r="5" fill="#1E8449"/><text x="1477" y="372" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Rate limit por cliente_id (slowapi)</text>
+<circle cx="1463" cy="398" r="5" fill="#1E8449"/><text x="1477" y="404" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Techo max_tokens ≤ 512</text>
+<circle cx="1463" cy="430" r="5" fill="#1E8449"/><text x="1477" y="436" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Mensaje ≤ 4000 · body ≤ 16 KB</text>
+<circle cx="1463" cy="462" r="5" fill="#1E8449"/><text x="1477" y="468" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Timeout upstream 20 s</text>
+<circle cx="1463" cy="494" r="5" fill="#1E8449"/><text x="1477" y="500" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">Contador en Redis con réplicas</text>
+<text x="1455" y="548" font-family="DejaVu Sans" font-size="14" fill="#1E8449" font-weight="bold" text-anchor="start">MÓDULO</text>
+<text x="1455" y="576" font-family="DejaVu Sans Mono" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">main.py · config.py</text>
+<text x="1455" y="620" font-family="DejaVu Sans" font-size="14" fill="#1E8449" font-weight="bold" text-anchor="start">EVIDENCIA ANTES / DESPUÉS</text>
+<text x="1455" y="646" font-family="DejaVu Sans Mono" font-size="14" fill="#1f2433" font-weight="normal" text-anchor="start">test_llm10_rate_limit.py</text>
+<text x="1455" y="672" font-family="DejaVu Sans Mono" font-size="14" fill="#1f2433" font-weight="normal" text-anchor="start">contraejemplo del límite por IP</text>
+<rect x="1447" y="694" width="408" height="180" rx="10" fill="#E6F4EA"/>
+<text x="1461" y="720" font-family="DejaVu Sans" font-size="14" fill="#1E8449" font-weight="bold" text-anchor="start">RIESGO RESIDUAL</text>
+<text x="1461" y="744" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">Cuenta solicitudes, no tokens → 5ª</text>
+<text x="1461" y="768" font-family="DejaVu Sans" font-size="15" fill="#1f2433" font-weight="normal" text-anchor="start">mitigación</text>
+<text x="45" y="940" font-family="DejaVu Sans" font-size="21" fill="#1E2761" font-weight="bold" text-anchor="start">Defensa en profundidad a lo largo de una solicitud</text>
+<rect x="45" y="960" width="440" height="100" rx="12" fill="#E6F4EA" stroke="#1E8449" stroke-width="2"/>
+<text x="69" y="998" font-family="DejaVu Sans" font-size="22" fill="#1E8449" font-weight="bold" text-anchor="start">1. Antes de gastar</text>
+<text x="69" y="1034" font-family="DejaVu Sans" font-size="18" fill="#1f2433" font-weight="normal" text-anchor="start">tamaño · techos · cuota</text>
+<line x1="485" y1="1010" x2="505" y2="1010" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="507" y="960" width="440" height="100" rx="12" fill="#FBE9E7" stroke="#C0392B" stroke-width="2"/>
+<text x="531" y="998" font-family="DejaVu Sans" font-size="22" fill="#C0392B" font-weight="bold" text-anchor="start">2. Entrada</text>
+<text x="531" y="1034" font-family="DejaVu Sans" font-size="18" fill="#1f2433" font-weight="normal" text-anchor="start">sanitización → 400</text>
+<line x1="947" y1="1010" x2="967" y2="1010" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="969" y="960" width="440" height="100" rx="12" fill="#F4EAF8" stroke="#7D3C98" stroke-width="2"/>
+<text x="993" y="998" font-family="DejaVu Sans" font-size="22" fill="#7D3C98" font-weight="bold" text-anchor="start">3. Salida</text>
+<text x="993" y="1034" font-family="DejaVu Sans" font-size="18" fill="#1f2433" font-weight="normal" text-anchor="start">canario + n-gramas</text>
+<line x1="1409" y1="1010" x2="1429" y2="1010" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="1431" y="960" width="440" height="100" rx="12" fill="#FDF3E1" stroke="#B7791F" stroke-width="2"/>
+<text x="1455" y="998" font-family="DejaVu Sans" font-size="22" fill="#B7791F" font-weight="bold" text-anchor="start">4. Transversal</text>
+<text x="1455" y="1034" font-family="DejaVu Sans" font-size="18" fill="#1f2433" font-weight="normal" text-anchor="start">secretos · errores · logs</text>
+<text x="60" y="1158" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="bold" text-anchor="start">Leyenda OWASP:</text>
+<rect x="200" y="1140" width="227.92" height="25" rx="12.5" fill="#C0392B"/><text x="313.96" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM01 Prompt Injection</text><rect x="441.91999999999996" y="1140" width="377.68" height="25" rx="12.5" fill="#B7791F"/><text x="630.76" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM02 Sensitive Information Disclosure</text><rect x="833.5999999999999" y="1140" width="274.72" height="25" rx="12.5" fill="#7D3C98"/><text x="970.9599999999999" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM07 System Prompt Leakage</text><rect x="1122.32" y="1140" width="274.72" height="25" rx="12.5" fill="#1E8449"/><text x="1259.6799999999998" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM10 Unbounded Consumption</text>
+</svg>

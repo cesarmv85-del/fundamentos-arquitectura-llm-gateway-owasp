@@ -1,5 +1,20 @@
 # Arquitectura y bitácora de fases
 
+## Diagramas (imágenes)
+
+| # | Vista | Archivo |
+|---|---|---|
+| 1 | Contexto y componentes (los 4 elementos de la arquitectura sugerida) | `docs/arquitectura/01_vista_contexto.png` |
+| 2 | Cadena de controles en orden real de ejecución | `docs/arquitectura/02_pipeline_controles.png` |
+| 3 | Secuencia de `POST /v1/chat` | `docs/arquitectura/03_secuencia_solicitud.png` |
+| 4 | Seguridad: OWASP → mitigación → módulo → evidencia | `docs/arquitectura/04_vista_seguridad_owasp.png` |
+| 5 | Logging seguro y degradación controlada | `docs/arquitectura/05_logging_y_degradacion.png` |
+| 6 | Despliegue en producción (propuesta) | `docs/arquitectura/06_despliegue_produccion.png` |
+
+Fuentes editables en `docs/arquitectura/svg/`.
+
+**Orden real de los controles** (verificado con pruebas): LimiteBody → CORS → Auditoría → Autenticación (401) → Validación Pydantic (422, no consume cuota) → Rate limit (429) → Sanitización (400) → Proveedor (502/503/504 o respaldo) → Filtro de salida.
+
 ## 1. Vista de componentes
 
 ```mermaid
@@ -20,7 +35,7 @@ flowchart LR
         PR[proveedores.py<br/>timeouts · errores tipados · respaldo]
         SO[salida.py<br/>canario + n-gramas]:::l07
         LG[(logging_seguro.py<br/>JSON allowlist + redacción)]:::l02
-        M0 --> M1 --> AU --> RL --> VA --> SA --> PR --> SO
+        M0 --> M1 --> AU --> VA --> RL --> SA --> PR --> SO
         M1 -.-> LG
     end
 
@@ -77,7 +92,7 @@ proyecto_04_gateway_llm/
 | Fábrica `crear_app(cfg)` | App global única | Permite levantar la misma app con y sin cada mitigación en la misma corrida de pruebas → evidencia antes/después automática |
 | Interruptores `MITIGACION_*` | Ramas git "vulnerable"/"segura" | Un solo código, la diferencia es exactamente la mitigación; y `ENTORNO=produccion` los bloquea |
 | Rate limit por clave | Por IP (Sesión 4) | NAT corporativo y abusadores multi-IP (error común #2) |
-| Rate limit antes de sanitizar | Después | Los intentos de inyección en bucle también consumen cuota |
+| Rate limit antes de sanitizar (y después de validar) | Después de sanitizar | Los intentos de inyección en bucle también consumen cuota; las solicitudes malformadas (422) no |
 | Rechazar la inyección (400) | Solo "limpiar" y enviar | Enviar un texto ya identificado como ataque gasta tokens y apuesta al alineamiento del modelo |
 | Filtro de salida LLM07 además de LLM01 | Confiar solo en la entrada | Defensa en profundidad: ningún filtro de entrada es completo |
 | Allowlist de campos de log | Lista negra ("no loguear prompt") | Denegar por defecto: un campo nuevo no se filtra por olvido |

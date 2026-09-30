@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1180" viewBox="0 0 1920 1180">
+<defs><marker id="m6b7280" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker><marker id="m9aa3b8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa3b8"/></marker><marker id="m8a94ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94ad"/></marker><marker id="mB7791F" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B7791F"/></marker><marker id="m7D3C98" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7D3C98"/></marker><marker id="m2F6FDE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6FDE"/></marker><marker id="mC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="m1E8449" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E8449"/></marker><marker id="m1E2761" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E2761"/></marker></defs><rect width="1920" height="1180" fill="#F6F8FC"/>
+<rect width="1920" height="8" fill="#1E2761"/>
+<text x="60" y="62" font-family="DejaVu Sans" font-size="36" fill="#1E2761" font-weight="bold" text-anchor="start">6 · Vista de despliegue en producción (propuesta)</text>
+<text x="60" y="96" font-family="DejaVu Sans" font-size="19" fill="#5d6780" font-weight="normal" text-anchor="start">Cómo se ejecutaría el mismo código en un entorno productivo: secretos, cuotas compartidas y observabilidad</text>
+<text x="1860" y="62" font-family="DejaVu Sans" font-size="16" fill="#5d6780" font-weight="normal" text-anchor="end">Gateway LLM · Arquitectura · Despliegue</text>
+<text x="1860" y="86" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="end">Proyecto Final Opción 4 · Fundamentos de Arquitectura LLM</text>
+<rect x="40" y="130" width="470" height="950" rx="18" fill="#F1F2F5" stroke="#6b7280" stroke-width="2" stroke-dasharray="10 7"/><text x="60" y="160" font-family="DejaVu Sans" font-size="19" fill="#6b7280" font-weight="bold" text-anchor="start">Ciclo de entrega (CI/CD)</text>
+<rect x="70" y="180" width="410" height="100" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="70" y="180" width="8" height="100" rx="3" fill="#6b7280"/>
+<text x="92" y="212" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Repositorio git</text>
+<text x="92" y="242" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">.gitignore: .env, logs/</text>
+<line x1="275" y1="280" x2="275" y2="323" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="70" y="325" width="410" height="100" rx="12" fill="#FFFFFF" stroke="#1E8449" stroke-width="2"/>
+<rect x="70" y="325" width="8" height="100" rx="3" fill="#1E8449"/>
+<text x="92" y="357" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">pytest (63 pruebas)</text>
+<text x="92" y="387" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">línea base + protegido por mitigación</text>
+<line x1="275" y1="425" x2="275" y2="468" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="70" y="470" width="410" height="100" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="70" y="470" width="8" height="100" rx="3" fill="#B7791F"/>
+<text x="92" y="502" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">escanear_secretos.py</text>
+<text x="92" y="532" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">código + historial git + logs</text>
+<line x1="275" y1="570" x2="275" y2="613" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="70" y="615" width="410" height="100" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="70" y="615" width="8" height="100" rx="3" fill="#B7791F"/>
+<text x="92" y="647" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">gitleaks (pre-commit)</text>
+<text x="92" y="677" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">recomendado en el pipeline</text>
+<line x1="275" y1="715" x2="275" y2="758" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="70" y="760" width="410" height="100" rx="12" fill="#FFFFFF" stroke="#1E2761" stroke-width="2"/>
+<rect x="70" y="760" width="8" height="100" rx="3" fill="#1E2761"/>
+<text x="92" y="792" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">docker build</text>
+<text x="92" y="822" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">python:3.12-slim · usuario no-root</text>
+<line x1="275" y1="860" x2="275" y2="903" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<rect x="70" y="905" width="410" height="100" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="70" y="905" width="8" height="100" rx="3" fill="#6b7280"/>
+<text x="92" y="937" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Artifact Registry</text>
+<text x="92" y="967" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">imagen versionada</text>
+<text x="275" y="1050" font-family="DejaVu Sans" font-size="15" fill="#5d6780" font-weight="normal" text-anchor="middle" font-style="italic">Un fallo en pruebas o escáner bloquea el despliegue</text>
+<rect x="560" y="130" width="1320" height="950" rx="18" fill="#EEF2FB" stroke="#1E2761" stroke-width="2"/><text x="580" y="160" font-family="DejaVu Sans" font-size="19" fill="#1E2761" font-weight="bold" text-anchor="start">Producción (propuesta sobre Google Cloud, en línea con la Sesión 4 del curso)</text>
+<rect x="600" y="190" width="330" height="130" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="600" y="190" width="8" height="130" rx="3" fill="#6b7280"/>
+<text x="622" y="222" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Apps internas</text>
+<text x="622" y="252" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">VPC / red corporativa</text>
+<text x="622" y="274" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Bearer gw_… por consumidor</text>
+<rect x="600" y="370" width="330" height="130" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="600" y="370" width="8" height="130" rx="3" fill="#6b7280"/>
+<text x="622" y="402" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Balanceador HTTPS</text>
+<text x="622" y="432" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">TLS · Cloud Armor (WAF)</text>
+<text x="622" y="454" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">límite por IP como 1ª capa</text>
+<rect x="990" y="180" width="480" height="520" rx="18" fill="#F3FAF5" stroke="#1E8449" stroke-width="2" stroke-dasharray="10 7"/><text x="1010" y="210" font-family="DejaVu Sans" font-size="19" fill="#1E8449" font-weight="bold" text-anchor="start">Cloud Run — gateway-llm</text>
+<rect x="1020" y="230" width="420" height="150" rx="12" fill="#FFFFFF" stroke="#1E2761" stroke-width="2"/>
+<rect x="1020" y="230" width="8" height="150" rx="3" fill="#1E2761"/>
+<text x="1042" y="262" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Contenedor gateway (N réplicas)</text>
+<text x="1042" y="292" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">uvicorn gateway.main:app</text>
+<text x="1042" y="314" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">ENTORNO=produccion (mitigaciones forzadas)</text>
+<text x="1042" y="336" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">sin /docs ni /openapi.json</text>
+<rect x="1020" y="400" width="420" height="130" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1020" y="400" width="8" height="130" rx="3" fill="#6b7280"/>
+<text x="1042" y="432" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Configuración por entorno</text>
+<text x="1042" y="462" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">RATE_LIMIT · MAX_TOKENS_TECHO</text>
+<text x="1042" y="484" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">PROVEEDOR_PRINCIPAL / RESPALDO</text>
+<text x="1042" y="506" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">OPENAI_API_KEY_FILE=/secrets/…</text>
+<rect x="1020" y="550" width="420" height="130" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="1020" y="550" width="8" height="130" rx="3" fill="#B7791F"/>
+<text x="1042" y="582" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Service account mínima</text>
+<text x="1042" y="612" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">secretAccessor solo de sus keys</text>
+<text x="1042" y="634" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">sin permisos de escritura extra</text>
+<rect x="600" y="560" width="330" height="130" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="600" y="560" width="8" height="130" rx="3" fill="#B7791F"/>
+<text x="622" y="592" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Secret Manager</text>
+<text x="622" y="622" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">keys de proveedores</text>
+<text x="622" y="644" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">hashes GATEWAY_CLIENT_KEYS</text>
+<rect x="600" y="740" width="330" height="130" rx="12" fill="#FFFFFF" stroke="#1E8449" stroke-width="2"/>
+<rect x="600" y="740" width="8" height="130" rx="3" fill="#1E8449"/>
+<text x="622" y="772" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Memorystore (Redis)</text>
+<text x="622" y="802" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">contadores de rate limit</text>
+<text x="622" y="824" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">compartidos entre réplicas</text>
+<rect x="990" y="740" width="480" height="130" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="990" y="740" width="8" height="130" rx="3" fill="#B7791F"/>
+<text x="1012" y="772" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Cloud Logging → SIEM / alertas</text>
+<text x="1012" y="802" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">eventos JSON sin datos sensibles</text>
+<text x="1012" y="824" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">alertas: bloqueado_llm01, fuga_llm07, 429</text>
+<rect x="1530" y="190" width="320" height="150" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1530" y="190" width="8" height="150" rx="3" fill="#6b7280"/>
+<text x="1552" y="222" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Proveedores SaaS</text>
+<text x="1552" y="252" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">OpenAI · Anthropic · Gemini</text>
+<text x="1552" y="274" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">egress controlado (NAT)</text>
+<rect x="1530" y="400" width="320" height="150" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1530" y="400" width="8" height="150" rx="3" fill="#6b7280"/>
+<text x="1552" y="432" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Ollama privado</text>
+<text x="1552" y="462" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">GKE / VM en la VPC</text>
+<text x="1552" y="484" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">datos que no pueden salir</text>
+<rect x="1530" y="740" width="320" height="130" rx="12" fill="#FFFFFF" stroke="#1E8449" stroke-width="2"/>
+<rect x="1530" y="740" width="8" height="130" rx="3" fill="#1E8449"/>
+<text x="1552" y="772" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Monitoreo de costos</text>
+<text x="1552" y="802" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">tokens por cliente_id</text>
+<text x="1552" y="824" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">presupuesto (5ª mitigación)</text>
+<line x1="765" y1="320" x2="765" y2="366" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/><text x="803.0" y="347.0" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">HTTPS</text>
+<line x1="930" y1="435" x2="1016" y2="305" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<line x1="930" y1="625" x2="1016" y2="620" stroke="#8a94ad" stroke-width="2.5" marker-end="url(#m8a94ad)"/><text x="973.0" y="612.5" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">*_FILE</text>
+<line x1="1016" y1="660" x2="930" y2="790" stroke="#8a94ad" stroke-width="2.5" marker-end="url(#m8a94ad)"/><text x="943.0" y="725.0" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">contadores</text>
+<line x1="1230" y1="700" x2="1230" y2="736" stroke="#8a94ad" stroke-width="2.5" marker-end="url(#m8a94ad)"/><text x="1258.0" y="722.0" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">logs</text>
+<line x1="1440" y1="280" x2="1526" y2="265" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<line x1="1440" y1="330" x2="1526" y2="470" stroke="#1E2761" stroke-width="3" marker-end="url(#m1E2761)"/>
+<line x1="1470" y1="805" x2="1526" y2="805" stroke="#8a94ad" stroke-width="2.5" marker-end="url(#m8a94ad)" stroke-dasharray="7 6"/>
+<text x="600" y="940" font-family="DejaVu Sans" font-size="18" fill="#1E2761" font-weight="bold" text-anchor="start">Por qué así:</text>
+<text x="600" y="972" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">• Varias réplicas exigen un contador compartido (Redis); con memory:// cada réplica tendría su propia cuota.</text>
+<text x="600" y="1002" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">• Las keys se montan como archivos (*_FILE): no viven en variables de entorno ni en la imagen.</text>
+<text x="600" y="1032" font-family="DejaVu Sans" font-size="16" fill="#1f2433" font-weight="normal" text-anchor="start">• El WAF limita por IP como primera capa; el gateway limita por clave, que es lo que controla el costo.</text>
+<text x="60" y="1158" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="bold" text-anchor="start">Leyenda OWASP:</text>
+<rect x="200" y="1140" width="227.92" height="25" rx="12.5" fill="#C0392B"/><text x="313.96" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM01 Prompt Injection</text><rect x="441.91999999999996" y="1140" width="377.68" height="25" rx="12.5" fill="#B7791F"/><text x="630.76" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM02 Sensitive Information Disclosure</text><rect x="833.5999999999999" y="1140" width="274.72" height="25" rx="12.5" fill="#7D3C98"/><text x="970.9599999999999" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM07 System Prompt Leakage</text><rect x="1122.32" y="1140" width="274.72" height="25" rx="12.5" fill="#1E8449"/><text x="1259.6799999999998" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM10 Unbounded Consumption</text>
+</svg>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1180" viewBox="0 0 1920 1180">
+<defs><marker id="m6b7280" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker><marker id="m9aa3b8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa3b8"/></marker><marker id="m8a94ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94ad"/></marker><marker id="mB7791F" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B7791F"/></marker><marker id="m7D3C98" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7D3C98"/></marker><marker id="m2F6FDE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6FDE"/></marker><marker id="mC0392B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0392B"/></marker><marker id="m1E8449" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E8449"/></marker><marker id="m1E2761" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E2761"/></marker></defs><rect width="1920" height="1180" fill="#F6F8FC"/>
+<rect width="1920" height="8" fill="#1E2761"/>
+<text x="60" y="62" font-family="DejaVu Sans" font-size="36" fill="#1E2761" font-weight="bold" text-anchor="start">1 · Vista de contexto y componentes</text>
+<text x="60" y="96" font-family="DejaVu Sans" font-size="19" fill="#5d6780" font-weight="normal" text-anchor="start">Los 4 elementos de la arquitectura sugerida en el enunciado (①–④), ubicados en el sistema completo</text>
+<text x="1860" y="62" font-family="DejaVu Sans" font-size="16" fill="#5d6780" font-weight="normal" text-anchor="end">Gateway LLM · Arquitectura · Vista de contexto</text>
+<text x="1860" y="86" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="end">Proyecto Final Opción 4 · Fundamentos de Arquitectura LLM</text>
+<rect x="40" y="130" width="330" height="760" rx="18" fill="#F1F2F5" stroke="#6b7280" stroke-width="2" stroke-dasharray="10 7"/><text x="60" y="160" font-family="DejaVu Sans" font-size="19" fill="#6b7280" font-weight="bold" text-anchor="start">Consumidores internos</text>
+<rect x="70" y="185" width="270" height="110" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="70" y="185" width="8" height="110" rx="3" fill="#6b7280"/>
+<text x="92" y="217" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">App de Soporte</text>
+<text x="92" y="247" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">clave gw_ propia</text>
+<text x="92" y="269" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">HTTPS + Bearer gw_…</text>
+<rect x="70" y="335" width="270" height="110" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="70" y="335" width="8" height="110" rx="3" fill="#6b7280"/>
+<text x="92" y="367" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">App de Ventas</text>
+<text x="92" y="397" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">clave gw_ propia</text>
+<text x="92" y="419" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">HTTPS + Bearer gw_…</text>
+<rect x="70" y="485" width="270" height="110" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="70" y="485" width="8" height="110" rx="3" fill="#6b7280"/>
+<text x="92" y="517" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Otras apps / agentes</text>
+<text x="92" y="547" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">una clave por consumidor</text>
+<text x="92" y="569" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">HTTPS + Bearer gw_…</text>
+<text x="205" y="690" font-family="DejaVu Sans" font-size="16" fill="#5d6780" font-weight="normal" text-anchor="middle">Ninguna app llama</text>
+<text x="205" y="712" font-family="DejaVu Sans" font-size="16" fill="#5d6780" font-weight="normal" text-anchor="middle">directamente al proveedor</text>
+<rect x="430" y="130" width="1000" height="760" rx="18" fill="#EEF2FB" stroke="#1E2761" stroke-width="2"/><text x="450" y="160" font-family="DejaVu Sans" font-size="19" fill="#1E2761" font-weight="bold" text-anchor="start">Gateway LLM — FastAPI (punto único de entrada)</text>
+<rect x="460" y="180" width="940" height="70" rx="12" fill="#FFFFFF" stroke="#2F6FDE" stroke-width="2"/>
+<rect x="460" y="180" width="8" height="70" rx="3" fill="#2F6FDE"/>
+<text x="482" y="212" font-family="DejaVu Sans" font-size="22" fill="#1f2433" font-weight="bold" text-anchor="start">POST /v1/chat</text>
+<text x="482" y="242" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Único endpoint hacia los LLM · también GET /health y GET /v1/seguridad/estado</text>
+<rect x="460" y="275" width="460" height="215" rx="12" fill="#FFFFFF" stroke="#1E8449" stroke-width="2"/>
+<rect x="460" y="275" width="8" height="215" rx="3" fill="#1E8449"/>
+<rect x="837.5" y="452" width="68.5" height="26" rx="6" fill="#1E8449"/>
+<text x="871.75" y="471" font-family="DejaVu Sans" font-size="15" fill="#fff" font-weight="bold" text-anchor="middle">LLM10</text>
+<text x="482" y="307" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">① FastAPI: middleware y dependencias</text>
+<text x="482" y="329" font-family="DejaVu Sans Mono" font-size="15" fill="#1E8449" font-weight="normal" text-anchor="start">gateway/main.py · auth.py</text>
+<text x="482" y="359" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">LimiteBody (413) · CORS por lista blanca</text>
+<text x="482" y="381" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Auditoría (request_id, latencia)</text>
+<text x="482" y="403" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Auth: clave gw_ → SHA-256 → cliente_id</text>
+<text x="482" y="425" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Rate limiting slowapi por cliente_id</text>
+<text x="482" y="447" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Validación Pydantic (techos de tamaño)</text>
+<rect x="940" y="275" width="460" height="215" rx="12" fill="#FFFFFF" stroke="#C0392B" stroke-width="2"/>
+<rect x="940" y="275" width="8" height="215" rx="3" fill="#C0392B"/>
+<rect x="1317.5" y="452" width="68.5" height="26" rx="6" fill="#C0392B"/>
+<text x="1351.75" y="471" font-family="DejaVu Sans" font-size="15" fill="#fff" font-weight="bold" text-anchor="middle">LLM01</text>
+<text x="962" y="307" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">② Módulo de sanitización (aislado)</text>
+<text x="962" y="329" font-family="DejaVu Sans Mono" font-size="15" fill="#C0392B" font-weight="normal" text-anchor="start">gateway/sanitizacion.py</text>
+<text x="962" y="359" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Normalización Unicode (NFKC, invisibles)</text>
+<text x="962" y="381" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Detección con puntaje ES/EN</text>
+<text x="962" y="403" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Neutralización de delimitadores</text>
+<text x="962" y="425" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Encapsulado &lt;entrada_usuario&gt;</text>
+<text x="962" y="447" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Probado aislado: 25 casos</text>
+<rect x="460" y="510" width="460" height="195" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="460" y="510" width="8" height="195" rx="3" fill="#B7791F"/>
+<rect x="837.5" y="667" width="68.5" height="26" rx="6" fill="#B7791F"/>
+<text x="871.75" y="686" font-family="DejaVu Sans" font-size="15" fill="#fff" font-weight="bold" text-anchor="middle">LLM02</text>
+<text x="482" y="542" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">③ Logging estructurado JSON</text>
+<text x="482" y="564" font-family="DejaVu Sans Mono" font-size="15" fill="#B7791F" font-weight="normal" text-anchor="start">gateway/logging_seguro.py</text>
+<text x="482" y="594" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Allowlist de campos (denegar por defecto)</text>
+<text x="482" y="616" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Redacción de keys, tokens y correos</text>
+<text x="482" y="638" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Sin prompt, respuesta ni cabeceras</text>
+<text x="482" y="660" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Un evento por solicitud → JSONL</text>
+<rect x="940" y="510" width="460" height="195" rx="12" fill="#FFFFFF" stroke="#7D3C98" stroke-width="2"/>
+<rect x="940" y="510" width="8" height="195" rx="3" fill="#7D3C98"/>
+<rect x="1317.5" y="667" width="68.5" height="26" rx="6" fill="#7D3C98"/>
+<text x="1351.75" y="686" font-family="DejaVu Sans" font-size="15" fill="#fff" font-weight="bold" text-anchor="middle">LLM07</text>
+<text x="962" y="542" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Filtro de salida + egress único</text>
+<text x="962" y="564" font-family="DejaVu Sans Mono" font-size="15" fill="#7D3C98" font-weight="normal" text-anchor="start">gateway/salida.py · proveedores.py</text>
+<text x="962" y="594" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">salida.py: canario + n-gramas (LLM07)</text>
+<text x="962" y="616" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">proveedores.py: único módulo con red</text>
+<text x="962" y="638" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Errores tipados → 502/503/504</text>
+<text x="962" y="660" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Proveedor de respaldo (degradado)</text>
+<rect x="460" y="725" width="940" height="140" rx="12" fill="#FFFFFF" stroke="#1E2761" stroke-width="2"/>
+<rect x="460" y="725" width="8" height="140" rx="3" fill="#1E2761"/>
+<text x="482" y="757" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">④ Documento de mapeo OWASP → mitigación → evidencia (entregable central)</text>
+<text x="482" y="787" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">docs/MAPEO_OWASP.md · 63 pruebas antes/después (tests/) · scripts/demo_antes_despues.py</text>
+<text x="482" y="809" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">scripts/ataques_en_vivo.sh · scripts/escanear_secretos.py (código + historial git + logs)</text>
+<rect x="1490" y="130" width="390" height="760" rx="18" fill="#F1F2F5" stroke="#6b7280" stroke-width="2" stroke-dasharray="10 7"/><text x="1510" y="160" font-family="DejaVu Sans" font-size="19" fill="#6b7280" font-weight="bold" text-anchor="start">Proveedores LLM (upstream)</text>
+<rect x="1515" y="180" width="340" height="108" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1515" y="180" width="8" height="108" rx="3" fill="#6b7280"/>
+<text x="1537" y="212" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">OpenAI</text>
+<text x="1537" y="242" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">api.openai.com · Bearer</text>
+<rect x="1515" y="318" width="340" height="108" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1515" y="318" width="8" height="108" rx="3" fill="#6b7280"/>
+<text x="1537" y="350" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Anthropic</text>
+<text x="1537" y="380" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">api.anthropic.com · x-api-key</text>
+<rect x="1515" y="456" width="340" height="108" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1515" y="456" width="8" height="108" rx="3" fill="#6b7280"/>
+<text x="1537" y="488" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Google Gemini</text>
+<text x="1537" y="518" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">cabecera x-goog-api-key</text>
+<rect x="1515" y="594" width="340" height="108" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1515" y="594" width="8" height="108" rx="3" fill="#6b7280"/>
+<text x="1537" y="626" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Ollama (local)</text>
+<text x="1537" y="656" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">sin key · red privada</text>
+<rect x="1515" y="732" width="340" height="108" rx="12" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+<rect x="1515" y="732" width="8" height="108" rx="3" fill="#6b7280"/>
+<text x="1537" y="764" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Simulado</text>
+<text x="1537" y="794" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">modelo ingenuo para demos</text>
+<line x1="340" y1="240" x2="455" y2="215" stroke="#1E2761" stroke-width="2.5" marker-end="url(#m1E2761)"/>
+<line x1="340" y1="390" x2="455" y2="215" stroke="#1E2761" stroke-width="2.5" marker-end="url(#m1E2761)"/>
+<line x1="340" y1="540" x2="455" y2="215" stroke="#1E2761" stroke-width="2.5" marker-end="url(#m1E2761)"/>
+<text x="398" y="170" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">HTTPS</text>
+<line x1="1400" y1="615" x2="1510" y2="234" stroke="#1E2761" stroke-width="2.5" marker-end="url(#m1E2761)"/>
+<line x1="1400" y1="615" x2="1510" y2="372" stroke="#1E2761" stroke-width="2.5" marker-end="url(#m1E2761)"/>
+<line x1="1400" y1="615" x2="1510" y2="510" stroke="#1E2761" stroke-width="2.5" marker-end="url(#m1E2761)"/>
+<line x1="1400" y1="615" x2="1510" y2="648" stroke="#1E2761" stroke-width="2.5" marker-end="url(#m1E2761)"/>
+<line x1="1400" y1="615" x2="1510" y2="786" stroke="#1E2761" stroke-width="2.5" marker-end="url(#m1E2761)"/>
+<text x="1685" y="912" font-family="DejaVu Sans" font-size="15" fill="#5d6780" font-weight="normal" text-anchor="middle" font-style="italic">Solo proveedores.py sale a la red</text>
+<rect x="460" y="930" width="300" height="150" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="460" y="930" width="8" height="150" rx="3" fill="#B7791F"/>
+<text x="482" y="962" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Gestor de secretos</text>
+<text x="482" y="984" font-family="DejaVu Sans Mono" font-size="15" fill="#B7791F" font-weight="normal" text-anchor="start">.env solo en desarrollo</text>
+<text x="482" y="1014" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">*_FILE → /run/secrets/…</text>
+<text x="482" y="1036" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">Secret Manager / Docker secrets</text>
+<text x="482" y="1058" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">SecretStr en memoria</text>
+<rect x="800" y="930" width="300" height="150" rx="12" fill="#FFFFFF" stroke="#1E8449" stroke-width="2"/>
+<rect x="800" y="930" width="8" height="150" rx="3" fill="#1E8449"/>
+<text x="822" y="962" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Contador de cuotas</text>
+<text x="822" y="984" font-family="DejaVu Sans" font-size="15" fill="#1E8449" font-weight="normal" text-anchor="start">slowapi / limits</text>
+<text x="822" y="1014" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">memory:// en desarrollo</text>
+<text x="822" y="1036" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">redis:// con varias réplicas</text>
+<text x="822" y="1058" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">RATE_LIMIT_STORAGE_URI</text>
+<rect x="1140" y="930" width="290" height="150" rx="12" fill="#FFFFFF" stroke="#B7791F" stroke-width="2"/>
+<rect x="1140" y="930" width="8" height="150" rx="3" fill="#B7791F"/>
+<text x="1162" y="962" font-family="DejaVu Sans" font-size="20" fill="#1f2433" font-weight="bold" text-anchor="start">Observabilidad</text>
+<text x="1162" y="984" font-family="DejaVu Sans" font-size="15" fill="#B7791F" font-weight="normal" text-anchor="start">auditoría</text>
+<text x="1162" y="1014" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">logs/gateway.jsonl + stdout</text>
+<text x="1162" y="1036" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">→ SIEM / Cloud Logging</text>
+<text x="1162" y="1058" font-family="DejaVu Sans" font-size="15" fill="#3a4254" font-weight="normal" text-anchor="start">sin datos sensibles</text>
+<line x1="610" y1="930" x2="610" y2="870" stroke="#8a94ad" stroke-width="2.5" marker-end="url(#m8a94ad)"/><text x="638.0" y="904.0" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">keys</text>
+<line x1="950" y1="930" x2="950" y2="870" stroke="#8a94ad" stroke-width="2.5" marker-end="url(#m8a94ad)"/><text x="998.0" y="904.0" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">contadores</text>
+<line x1="1285" y1="890" x2="1285" y2="930" stroke="#8a94ad" stroke-width="2.5" marker-end="url(#m8a94ad)"/><text x="1347.0" y="914.0" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="normal" text-anchor="middle">eventos JSON</text>
+<text x="60" y="1158" font-family="DejaVu Sans" font-size="14" fill="#5d6780" font-weight="bold" text-anchor="start">Leyenda OWASP:</text>
+<rect x="200" y="1140" width="227.92" height="25" rx="12.5" fill="#C0392B"/><text x="313.96" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM01 Prompt Injection</text><rect x="441.91999999999996" y="1140" width="377.68" height="25" rx="12.5" fill="#B7791F"/><text x="630.76" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM02 Sensitive Information Disclosure</text><rect x="833.5999999999999" y="1140" width="274.72" height="25" rx="12.5" fill="#7D3C98"/><text x="970.9599999999999" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM07 System Prompt Leakage</text><rect x="1122.32" y="1140" width="274.72" height="25" rx="12.5" fill="#1E8449"/><text x="1259.6799999999998" y="1156" font-family="DejaVu Sans" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">LLM10 Unbounded Consumption</text>
+</svg>
