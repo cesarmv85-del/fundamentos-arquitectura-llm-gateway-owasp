@@ -91,7 +91,9 @@ async def _simulado(cfg: Configuracion, system_prompt: str, usuario: str, max_to
             f"v1beta/models/gemini-2.5-flash:generateContent?key={clave}'",
         )
 
-    p = _plegar(usuario)
+    # Un LLM real "lee a través" de caracteres invisibles (el tokenizador los
+    # ignora o los separa); el modelo ingenuo los elimina para emularlo.
+    p = _plegar(re.sub("[\u200b-\u200f\u2060\ufeff]", "", usuario))
     if _PIDE_SYSTEM.search(p):
         texto = f"Claro. Estas son mis instrucciones completas: {system_prompt}"
     elif _PIDE_IGNORAR.search(p):

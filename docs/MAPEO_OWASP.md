@@ -21,7 +21,7 @@ Reproducir todo en un solo comando (sin API keys, sin red):
 
 ```bash
 pip install -r requirements.txt
-pytest -v                                # 62 pruebas: línea base + protegido por cada mitigación
+pytest -v                                # 63 pruebas: línea base + protegido por cada mitigación
 python scripts/demo_antes_despues.py     # tabla + docs/evidencias/REPORTE_EVIDENCIA.md
 python scripts/escanear_secretos.py      # código + historial git + logs/
 ```

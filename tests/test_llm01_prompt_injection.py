@@ -53,3 +53,9 @@ def test_consulta_legitima_sigue_funcionando(fabrica):
     cliente, _ = fabrica(mitigacion_llm01=True)
     r = cliente.post("/v1/chat", json={"mensaje": "¿Puedo devolver un producto?"}, headers=cabeceras())
     assert r.status_code == 200 and "30 días" in r.json()["respuesta"]
+
+
+def test_linea_base_la_variante_invisible_tambien_engana_al_modelo(fabrica):
+    cliente, _ = fabrica(mitigacion_llm01=False)
+    r = cliente.post("/v1/chat", json={"mensaje": ATAQUE_EVASIVO}, headers=cabeceras())
+    assert "reembolso doble" in r.json()["respuesta"]

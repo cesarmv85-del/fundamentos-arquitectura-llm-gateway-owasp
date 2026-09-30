@@ -56,7 +56,7 @@ proyecto_04_gateway_llm/
 │   ├── salida.py          ← LLM07 (módulo puro)
 │   ├── proveedores.py     ← ÚNICO módulo que habla con proveedores
 │   └── logging_seguro.py  ← LLM02: formateador JSON allowlist + redacción
-├── tests/                 ← 62 pruebas: línea base vs. protegido por mitigación
+├── tests/                 ← 63 pruebas: línea base vs. protegido por mitigación
 ├── scripts/
 │   ├── demo_antes_despues.py   ← evidencia reproducible → docs/evidencias/REPORTE_EVIDENCIA.md
 │   ├── ataques_en_vivo.sh      ← curl contra el servidor (para el video)

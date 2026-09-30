@@ -1,5 +1,9 @@
 # Guion del video (≤ 30 minutos)
 
+> **Video generado:** `Video_Gateway_LLM_OWASP.mp4` (22 min 40 s, 1080p) con subtítulos en `docs/Video_Gateway_LLM_OWASP.srt`.
+> Las demos de terminal son ejecuciones reales del gateway (`uvicorn` + `curl`) capturadas y animadas; la narración usa voz sintética en español.
+> Este guion sirve para regrabar el video con voz propia o en pantalla en vivo.
+
 Duración objetivo: **26 min** (4 min de holgura). Pantalla dividida: terminal 1 = gateway, terminal 2 = ataques, editor con el código a la derecha.
 
 ## Preparación (antes de grabar)
@@ -10,7 +14,7 @@ cp .env.example .env
 python scripts/generar_clave_cliente.py equipo_soporte   # copiar clave → GW_KEY; hash → .env
 python scripts/generar_clave_cliente.py equipo_ventas    # copiar clave → GW_KEY_2; hash → .env (separado por coma)
 export GW_KEY=gw_...  GW_KEY_2=gw_...
-pytest -q                                                 # confirmar 62 passed
+pytest -q                                                 # confirmar 63 passed
 ```
 Tener abiertos: `docs/MAPEO_OWASP.md`, `gateway/sanitizacion.py`, `gateway/salida.py`, `gateway/logging_seguro.py`.
 
@@ -67,6 +71,6 @@ Tener abiertos: `docs/MAPEO_OWASP.md`, `gateway/sanitizacion.py`, `gateway/salid
 
 ## Bloque 7 · Evidencia automatizada y cierre — 23:00 a 26:00  → **Pregunta 4**
 
-1. `pytest -v` (62 en verde) y `python scripts/demo_antes_despues.py` (tabla antes/después + reporte).
+1. `pytest -v` (63 en verde) y `python scripts/demo_antes_despues.py` (tabla antes/después + reporte).
 2. **Quinta mitigación con más tiempo**: presupuesto de **tokens/costo por clave** (el rate limit cuenta solicitudes, pero el costo lo definen los tokens), y luego LLM05 (salida como texto no confiable).
 3. Cierre: diferencia entre mitigación "de papel" y mitigación demostrada — cada control de este gateway tiene una prueba que falla si se apaga.

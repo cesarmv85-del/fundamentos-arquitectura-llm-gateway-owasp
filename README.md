@@ -38,7 +38,7 @@ curl -s -X POST localhost:8000/v1/chat \
 ## Evidencia antes / después
 
 ```bash
-pytest -v                               # 62 pruebas: cada mitigación con línea base y protegido
+pytest -v                               # 63 pruebas: cada mitigación con línea base y protegido
 python scripts/demo_antes_despues.py    # tabla + docs/evidencias/REPORTE_EVIDENCIA.md
 python scripts/escanear_secretos.py     # código + historial git + logs sin secretos
 ```
