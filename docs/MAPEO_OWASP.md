@@ -8,12 +8,18 @@ Este documento es el entregable central del proyecto. Para cada categoría cubie
 
 ## 0. Resumen
 
+La Figura 1 ubica en el sistema completo los cuatro elementos de la arquitectura sugerida en el enunciado (①–④); la Figura 2 resume, por categoría, la amenaza, los controles, el módulo, la evidencia y el riesgo residual.
+
+![Figura 1. Vista de contexto: los 4 elementos de la arquitectura sugerida (①–④)](arquitectura/01_vista_contexto.png)
+
 | OWASP 2025 | Riesgo concreto en este gateway | Mitigación implementada | Módulo · Pruebas |
 |---|---|---|---|
 | **LLM01** Prompt Injection | Un cliente reescribe una regla de negocio ("devoluciones en 365 días") y el gateway la entrega como respuesta oficial | Normalización Unicode + detección por puntaje ES/EN + neutralización de delimitadores + encapsulado `<entrada_usuario>`; rechazo **antes** de llamar al proveedor | `sanitizacion.py` · `test_llm01_prompt_injection.py`, `test_sanitizacion.py` |
 | **LLM02** Sensitive Information Disclosure | (A) la API key del proveedor llega al cliente en un mensaje de error; (B) los logs guardan prompts con PII y la clave del cliente | `SecretStr` + `*_FILE`; claves de cliente solo como SHA-256; key de Google en cabecera; errores genéricos con `request_id`; logs JSON con **allowlist** + redacción | `config.py`, `auth.py`, `logging_seguro.py` · `test_llm02_credenciales.py`, `test_arquitectura.py` |
 | **LLM07** System Prompt Leakage *(4ª mitigación)* | El atacante obtiene las reglas internas y aprende qué debe evadir | System prompt sin secretos + **token canario** por arranque + detector de **n-gramas** sobre la salida | `salida.py` · `test_llm07_fuga_system_prompt.py` |
 | **LLM10** Unbounded Consumption | Una app con bug o un abusador dispara miles de llamadas o pide `max_tokens=50000` | Rate limit **por clave de cliente** (slowapi), techo de `max_tokens`, largo máximo, límite de body (413), timeout upstream | `main.py` · `test_llm10_rate_limit.py` |
+
+![Figura 2. Vista de seguridad: OWASP → mitigación → módulo → evidencia](arquitectura/04_vista_seguridad_owasp.png)
 
 Demostración en vivo de cualquiera: `make linea-base M=LLM0X` → `./scripts/ataques_en_vivo.sh llm0X` → `make protegido` → repetir (detalle en cada sección).
 
@@ -230,6 +236,10 @@ Respuesta al exceder: `429` + `Retry-After: 60` + mensaje claro.
 
 ## 7. Requisitos no funcionales
 
+La Figura 3 resume los dos requisitos no funcionales: el logging de auditoría sin fugas (7.1) y la degradación controlada ante fallos del proveedor (7.2).
+
+![Figura 3. Logging seguro y degradación controlada](arquitectura/05_logging_y_degradacion.png)
+
 ### 7.1 Logging de auditoría sin fugas (`gateway/logging_seguro.py`)
 
 Formato: una línea JSON por solicitud en `logs/gateway.jsonl` (y en consola).
@@ -266,6 +276,12 @@ Pruebas: `tests/test_degradacion_y_logging.py` (incluye la línea base con `Trac
 
 `tests/test_arquitectura.py::test_solo_proveedores_py_contacta_a_los_proveedores` falla si cualquier módulo distinto de `proveedores.py` importa `httpx`/`openai`/`anthropic` o contiene URLs de proveedores.
 
+Toda solicitud recorre la misma cadena de controles. Su orden real, verificado con pruebas, es: LimiteBody (413) → CORS → Auditoría → Autenticación (401) → Validación Pydantic (422, no consume cuota) → Rate limit (429) → Sanitización (400) → Proveedor (502/503/504 o respaldo) → Filtro de salida (Figura 4). La Figura 5 muestra el mismo recorrido en el tiempo, con las tres ramas de seguridad.
+
+![Figura 4. Cadena de controles en orden real de ejecución](arquitectura/02_pipeline_controles.png)
+
+![Figura 5. Diagrama de secuencia de POST /v1/chat](arquitectura/03_secuencia_solicitud.png)
+
 ---
 
 ## 8. Quinta mitigación propuesta (con más tiempo)
@@ -291,7 +307,26 @@ Las mitigaciones de entrada (LLM01, LLM10), de errores/logs (LLM02) y de salida 
 
 ---
 
-## 10. Checklist de "terminado" (enunciado §12)
+## 10. Despliegue en producción (propuesta)
+
+El gateway se ejecuta hoy en local y en Docker; esta sección propone cómo desplegar **el mismo código** en producción, en línea con la Sesión 4 del curso (Google Cloud). Es una propuesta de diseño: no está desplegada.
+
+![Figura 6. Vista de despliegue en producción (propuesta)](arquitectura/06_despliegue_produccion.png)
+
+| Componente | Decisión | Relación con OWASP |
+|---|---|---|
+| Cloud Run (N réplicas) | Contenedor `python:3.12-slim`, usuario no-root, `ENTORNO=produccion` (no arranca con mitigaciones apagadas), sin `/docs` | Todas |
+| Secret Manager | Keys de proveedores y hashes de clientes montados como archivos (`*_FILE`); no viven en variables de entorno ni en la imagen | LLM02 |
+| Service account mínima | Solo `secretAccessor` de sus propios secretos | LLM02 |
+| Memorystore (Redis) | `RATE_LIMIT_STORAGE_URI=redis://…`: con varias réplicas, un contador en memoria daría a cada réplica su propia cuota | LLM10 |
+| Balanceador HTTPS + Cloud Armor | TLS y límite por IP como **primera** capa; el gateway limita por clave, que es lo que controla el costo | LLM10 |
+| Cloud Logging → SIEM | Eventos JSON ya filtrados; alertas sobre `bloqueado_llm01`, `fuga_bloqueada_llm07` y ráfagas de `429` | LLM02 · LLM01 · LLM07 |
+| Ollama privado (GKE / VM en la VPC) | Proveedor de respaldo para datos que no pueden salir de la organización | LLM02 |
+| CI/CD | `pytest` (63 pruebas) + `escanear_secretos.py` + gitleaks bloquean el despliegue ante un fallo | LLM02 |
+
+---
+
+## 11. Checklist de "terminado" (enunciado §12)
 
 - [x] Cada mitigación tiene un caso reproducible **antes y después** → pruebas `test_linea_base_*` / `test_con_mitigacion_*` + `scripts/demo_antes_despues.py`.
 - [x] El mapeo es **específico** del gateway (ataques concretos, módulos, funciones y hallazgos del repositorio del curso), no una lista copiada de OWASP.
