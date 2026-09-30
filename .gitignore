@@ -1,0 +1,16 @@
+# Secretos
+.env
+*.pem
+*.key
+secrets/
+# Logs de ejecución y evidencias INSEGURAS de línea base (contienen claves falsas/PII ficticia)
+logs/
+evidencias_inseguras/
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# SO
+.DS_Store

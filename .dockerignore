@@ -1,0 +1,9 @@
+.env
+.git
+logs/
+evidencias_inseguras/
+venv/
+.venv/
+__pycache__/
+tests/
+docs/
