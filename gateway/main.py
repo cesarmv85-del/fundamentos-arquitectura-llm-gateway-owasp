@@ -18,6 +18,7 @@ Ejecutar:
     uvicorn gateway.main:app --port 8000
 """
 
+import json
 import logging
 import time
 import uuid
@@ -27,6 +28,7 @@ from fastapi import Depends, FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel, Field
 from slowapi import Limiter
 from slowapi.errors import RateLimitExceeded
@@ -67,7 +69,7 @@ class LimiteBody:
         cabeceras = dict(scope.get("headers") or [])
         declarado = cabeceras.get(b"content-length")
         if declarado and declarado.isdigit() and int(declarado) > self.max_bytes:
-            return await self._rechazar(send)
+            return await self._rechazar(scope, send)
         recibido = 0
 
         async def receive_limitado():
@@ -82,13 +84,23 @@ class LimiteBody:
         try:
             await self.app(scope, receive_limitado, send)
         except _CuerpoDemasiadoGrande:
-            await self._rechazar(send)
+            await self._rechazar(scope, send)
 
     @staticmethod
-    async def _rechazar(send):
-        cuerpo = b'{"error":"cuerpo_demasiado_grande","mensaje":"La solicitud excede el tamano maximo permitido."}'
+    async def _rechazar(scope, send):
+        # Este middleware corre ANTES que el de auditoría, así que genera su
+        # propio request_id y registra el evento: un cuerpo desmedido es una
+        # señal de abuso que también debe quedar auditada.
+        rid = uuid.uuid4().hex[:16]
+        registrar("solicitud", logging.WARNING, request_id=rid, endpoint=scope.get("path", ""),
+                  metodo=scope.get("method", ""), estado_http=413, resultado="cuerpo_demasiado_grande",
+                  latencia_ms=0, cliente_id=None)
+        cuerpo = json.dumps({"error": "cuerpo_demasiado_grande",
+                             "mensaje": "La solicitud excede el tamaño máximo permitido.",
+                             "request_id": rid}, ensure_ascii=False).encode("utf-8")
         await send({"type": "http.response.start", "status": 413,
-                    "headers": [(b"content-type", b"application/json"), (b"content-length", str(len(cuerpo)).encode())]})
+                    "headers": [(b"content-type", b"application/json"), (b"content-length", str(len(cuerpo)).encode()),
+                                (b"x-request-id", rid.encode()), (b"cache-control", b"no-store")]})
         await send({"type": "http.response.body", "body": cuerpo})
 
 
@@ -225,7 +237,13 @@ def crear_app(cfg: Optional[Configuracion] = None) -> FastAPI:
         return _json_error(request, 500, "error_interno", "Ocurrió un error interno. Contacte al equipo de plataforma con el request_id.")
 
     # ── Dependencia de autenticación ──────────────────────────────────────
-    async def cliente_autenticado(request: Request) -> Cliente:
+    # HTTPBearer solo DECLARA el esquema para que /docs muestre el botón
+    # "Authorize"; la validación real la hace auth.py (hash + compare_digest).
+    esquema_bearer = HTTPBearer(auto_error=False, description="Clave de cliente del gateway (gw_…)")
+
+    async def cliente_autenticado(
+        request: Request, _credenciales: Optional[HTTPAuthorizationCredentials] = Depends(esquema_bearer)
+    ) -> Cliente:
         cliente = identificar_cliente(extraer_bearer(request), cfg.claves_cliente_sha256)
         request.state.cliente = cliente
         return cliente

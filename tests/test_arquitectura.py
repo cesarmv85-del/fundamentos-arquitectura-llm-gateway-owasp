@@ -29,5 +29,5 @@ def test_solo_proveedores_py_contacta_a_los_proveedores():
 
 def test_no_hay_secretos_en_el_codigo_fuente():
     r = subprocess.run([sys.executable, str(RAIZ / "scripts" / "escanear_secretos.py"), "--solo-archivos"],
-                       capture_output=True, text=True, cwd=RAIZ)
+                       capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=RAIZ)
     assert r.returncode == 0, r.stdout + r.stderr

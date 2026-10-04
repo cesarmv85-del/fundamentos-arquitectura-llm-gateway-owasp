@@ -12,6 +12,13 @@ import re
 import secrets
 import sys
 
+# Windows: la consola o una salida redirigida pueden no ser UTF-8 (cp1252).
+for _flujo in (sys.stdout, sys.stderr):
+    try:
+        _flujo.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 if len(sys.argv) != 2 or not re.fullmatch(r"[a-z0-9_]{3,32}", sys.argv[1]):
     sys.exit("Uso: python scripts/generar_clave_cliente.py <nombre_cliente>  (a-z, 0-9, _)")
 

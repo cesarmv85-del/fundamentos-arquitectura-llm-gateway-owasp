@@ -1,0 +1,10 @@
+# Saltos de línea consistentes en cualquier sistema operativo.
+* text=auto
+# Los scripts de shell deben conservar LF: con CRLF fallan en Git Bash y en Docker.
+*.sh text eol=lf
+Dockerfile text eol=lf
+Makefile text eol=lf
+# Binarios
+*.png binary
+*.docx binary
+*.mp4 binary

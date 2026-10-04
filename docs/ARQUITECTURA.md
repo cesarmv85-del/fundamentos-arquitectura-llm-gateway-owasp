@@ -79,6 +79,8 @@ proyecto_04_gateway_llm/
 │   └── generar_clave_cliente.py
 ├── docs/
 │   ├── MAPEO_OWASP.md          ← ENTREGABLE CENTRAL
+│   ├── MANUAL_INSTALACION.md   ← instalación, configuración y producción
+│   ├── MANUAL_USUARIO.md       ← uso, administración y auditoría
 │   ├── ARQUITECTURA.md         ← este archivo
 │   ├── GUION_VIDEO.md
 │   └── evidencias/             ← reporte + logs del modo protegido

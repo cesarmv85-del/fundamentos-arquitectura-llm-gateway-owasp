@@ -25,8 +25,8 @@ def test_con_mitigacion_la_fuga_es_interceptada(fabrica):
     assert r.status_code == 200
     assert r.json()["respuesta"] == RESPUESTA_SEGURA_FUGA
     assert "CANARIO-" not in r.text
-    assert '"resultado": "fuga_bloqueada_llm07"' in log.read_text()
-    assert "CANARIO-" not in log.read_text()  # el canario tampoco se loguea
+    assert '"resultado": "fuga_bloqueada_llm07"' in log.read_text(encoding="utf-8")
+    assert "CANARIO-" not in log.read_text(encoding="utf-8")  # el canario tampoco se loguea
 
 
 # ── Pruebas unitarias del detector ──────────────────────────────────────────

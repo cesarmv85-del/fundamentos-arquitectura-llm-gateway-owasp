@@ -66,7 +66,7 @@ def test_secretstr_no_revela_la_key_en_repr_ni_str():
 
 def test_la_key_se_puede_leer_desde_archivo_montado(tmp_path, monkeypatch):
     archivo = tmp_path / "openai_key"
-    archivo.write_text("desde-secret-manager\n")
+    archivo.write_text("desde-secret-manager\n", encoding="utf-8")
     monkeypatch.setenv("OPENAI_API_KEY_FILE", str(archivo))
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     assert _secreto("OPENAI_API_KEY").get_secret_value() == "desde-secret-manager"

@@ -46,6 +46,9 @@ def test_sin_clave_de_cliente_401_generico(fabrica):
     assert r.status_code == 401 and r.headers["WWW-Authenticate"] == "Bearer"
     r2 = cliente.post("/v1/chat", json={"mensaje": "hola"}, headers=cabeceras("gw_inexistente123456"))
     assert r2.status_code == 401 and r2.json()["mensaje"] == r.json()["mensaje"]  # no revela si la clave existe
+    # /docs declara el esquema Bearer (botón "Authorize") sin cambiar la validación real
+    esquemas = cliente.get("/openapi.json").json()["components"]["securitySchemes"]
+    assert any(e.get("scheme") == "bearer" for e in esquemas.values())
 
 
 def test_toda_respuesta_lleva_request_id(fabrica):

@@ -244,7 +244,7 @@ La Figura 3 resume los dos requisitos no funcionales: el logging de auditoría s
 
 Formato: una línea JSON por solicitud en `logs/gateway.jsonl` (y en consola).
 
-**Se registra** (útil para auditoría): `timestamp`, `request_id`, `endpoint`, `metodo`, `estado_http`, `resultado` (`ok`, `bloqueado_llm01`, `fuga_bloqueada_llm07`, `rate_limit_excedido`, `error_upstream`, `no_autorizado`, `validacion_fallida`), `latencia_ms`, `cliente_id` (hash), `proveedor`, `modelo`, `tokens_entrada/salida`, `longitud_mensaje`, `categorias_bloqueo`, `tipo_error`, `degradado`.
+**Se registra** (útil para auditoría): `timestamp`, `request_id`, `endpoint`, `metodo`, `estado_http`, `resultado` (`ok`, `bloqueado_llm01`, `fuga_bloqueada_llm07`, `rate_limit_excedido`, `error_upstream`, `no_autorizado`, `validacion_fallida`, `cuerpo_demasiado_grande`), `latencia_ms`, `cliente_id` (hash), `proveedor`, `modelo`, `tokens_entrada/salida`, `longitud_mensaje`, `categorias_bloqueo`, `tipo_error`, `degradado`.
 
 **No se registra jamás**, y por qué:
 

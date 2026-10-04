@@ -27,7 +27,7 @@ def test_con_rate_limit_la_sexta_solicitud_es_rechazada(fabrica):
     r = cliente.post("/v1/chat", json=MSG, headers=cabeceras())
     assert r.headers["Retry-After"] == "60"
     assert r.json()["error"] == "limite_excedido"
-    assert "rate_limit_excedido" in log.read_text()
+    assert "rate_limit_excedido" in log.read_text(encoding="utf-8")
 
 
 def test_rate_limit_es_por_clave_no_por_ip(fabrica):
@@ -61,9 +61,12 @@ def test_con_mitigacion_max_tokens_sobre_el_techo_es_rechazado(fabrica):
 
 
 def test_con_mitigacion_cuerpo_gigante_es_rechazado_con_413(fabrica):
-    cliente, _ = fabrica(mitigacion_llm10=True, max_bytes_body=16384)
+    cliente, log = fabrica(mitigacion_llm10=True, max_bytes_body=16384)
     r = cliente.post("/v1/chat", json={"mensaje": "x" * 1_000_000}, headers=cabeceras())
     assert r.status_code == 413
+    # También se audita y lleva request_id, igual que el resto de rechazos
+    assert r.headers["X-Request-ID"] == r.json()["request_id"]
+    assert '"resultado": "cuerpo_demasiado_grande"' in log.read_text(encoding="utf-8")
 
 
 def test_error_422_no_refleja_el_input_del_usuario(fabrica):

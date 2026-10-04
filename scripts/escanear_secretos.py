@@ -19,6 +19,13 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Windows: la consola o una salida redirigida pueden no ser UTF-8 (cp1252).
+for _flujo in (sys.stdout, sys.stderr):
+    try:
+        _flujo.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 RAIZ = Path(__file__).resolve().parent.parent
 
 PATRONES = {
@@ -35,7 +42,7 @@ EXTENSIONES = {".py", ".md", ".txt", ".toml", ".yml", ".yaml", ".json", ".exampl
 def _archivos() -> list[Path]:
     try:
         salida = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard"],
-                                cwd=RAIZ, capture_output=True, text=True, check=True).stdout
+                                cwd=RAIZ, capture_output=True, text=True, encoding="utf-8", errors="replace", check=True).stdout
         return [RAIZ / linea for linea in salida.splitlines() if linea]
     except (subprocess.CalledProcessError, FileNotFoundError):
         return [p for p in RAIZ.rglob("*") if p.is_file() and not (set(p.relative_to(RAIZ).parts) & EXCLUIR_DIRS)
@@ -66,7 +73,7 @@ def escanear_archivos() -> list[str]:
 def escanear_historial_git() -> list[str]:
     try:
         log = subprocess.run(["git", "log", "-p", "--all", "--no-color"], cwd=RAIZ,
-                             capture_output=True, text=True, check=True).stdout
+                             capture_output=True, text=True, encoding="utf-8", errors="replace", check=True).stdout
     except (subprocess.CalledProcessError, FileNotFoundError):
         return []
     lineas_agregadas = "\n".join(l[1:] for l in log.splitlines() if l.startswith("+") and not l.startswith("+++"))
