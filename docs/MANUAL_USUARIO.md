@@ -1,6 +1,6 @@
 # Manual de usuario
 
-Versión 1.0 · Octubre 2026 · Autor: César · Repositorio: `github.com/cesarmv85-del/fundamentos-arquitectura-llm-gateway-owasp`
+Versión 1.1 · Octubre 2026 · Autor: César · Repositorio: `github.com/cesarmv85-del/fundamentos-arquitectura-llm-gateway-owasp`
 
 Este manual explica cómo usar el Gateway LLM una vez instalado: enviar consultas, interpretar las respuestas y los errores, administrar claves y límites, leer el registro de auditoría y reproducir la demostración de seguridad. Para instalarlo, consulte el **Manual de instalación**.
 
@@ -44,31 +44,21 @@ Dos características que conviene conocer desde el inicio:
 
 ## 3. Enviar una consulta
 
-Necesita dos datos: la **dirección del gateway** (en una instalación local, `http://localhost:8000`) y su **clave de cliente**.
+Necesita dos datos: la **dirección del gateway** y su **clave de cliente**. La dirección es `http://localhost:8000` desde la propia máquina Linux donde está instalado; en GitHub Codespaces, desde fuera, es la que muestra la pestaña **PORTS** (`https://NOMBRE-8000.app.github.dev`).
 
 > **Importante:** no escriba la clave dentro del código ni la suba a un repositorio. Guárdela en una variable de entorno, como en los ejemplos.
 
-### 3.1 Desde la terminal (Linux, macOS o Git Bash)
+### 3.1 Desde la terminal
 
 ```bash
-export GW_KEY=gw_...su_clave...
+export GW_KEY=gw_...su_clave...        # en la máquina de instalación: export GW_KEY=$(cat .gw_key)
 curl -s -X POST http://localhost:8000/v1/chat \
   -H "Authorization: Bearer $GW_KEY" \
   -H "Content-Type: application/json" \
   -d '{"mensaje":"¿Puedo devolver un producto que compré hace 20 días?"}'
 ```
 
-### 3.2 Desde PowerShell (Windows)
-
-```powershell
-$env:GW_KEY = "gw_...su_clave..."
-$cabeceras = @{ Authorization = "Bearer $env:GW_KEY" }
-$cuerpo = @{ mensaje = "¿Puedo devolver un producto que compré hace 20 días?" } | ConvertTo-Json
-Invoke-RestMethod -Uri http://localhost:8000/v1/chat -Method Post -Headers $cabeceras `
-  -ContentType "application/json; charset=utf-8" -Body ([Text.Encoding]::UTF8.GetBytes($cuerpo))
-```
-
-### 3.3 Desde Python
+### 3.2 Desde Python
 
 ```python
 import os
@@ -92,11 +82,11 @@ else:
     print(f"Error {r.status_code}: {datos['mensaje']} (request_id={datos['request_id']})")
 ```
 
-### 3.4 Desde el navegador
+### 3.3 Desde el navegador
 
-Fuera de producción, abra `http://localhost:8000/docs`, pulse **Authorize**, pegue su clave `gw_…` y use el botón **Try it out** de `POST /v1/chat`. La página necesita conexión a internet para cargar.
+Fuera de producción, abra la dirección del gateway seguida de `/docs`, pulse **Authorize**, pegue su clave `gw_…` y use el botón **Try it out** de `POST /v1/chat`. La página necesita conexión a internet para cargar.
 
-### 3.5 Respuesta
+### 3.4 Respuesta
 
 ```text
 {
@@ -219,12 +209,12 @@ Tres detalles sobre la cuota:
 
 ## 7. Administración
 
-Estas tareas se hacen en el servidor donde está instalado el gateway, con el entorno virtual activo. **Todo cambio en `.env` requiere reiniciar el gateway** (`Ctrl + C` y volver a arrancar).
+Estas tareas se hacen en la máquina Linux donde está instalado el gateway, dentro de la carpeta del proyecto. **Todo cambio en `.env` requiere reiniciar el gateway:** `make detener && make iniciar` si corre en segundo plano, o `Ctrl + C` y `make protegido` si corre en primer plano.
 
 ### 7.1 Dar acceso a una aplicación nueva
 
 ```bash
-python scripts/generar_clave_cliente.py equipo_ventas
+venv/bin/python scripts/generar_clave_cliente.py equipo_ventas
 ```
 
 El nombre admite minúsculas, números y guion bajo (de 3 a 32 caracteres). El comando muestra dos datos:
@@ -264,11 +254,11 @@ PROVEEDOR_PRINCIPAL=openai
 PROVEEDOR_RESPALDO=ollama
 ```
 
-Con un respaldo configurado, si el principal falla la aplicación recibe igualmente una respuesta, marcada con `degradado: true`. Los detalles de cada proveedor están en el Manual de instalación, sección 5.
+Con un respaldo configurado, si el principal falla la aplicación recibe igualmente una respuesta, marcada con `degradado: true`. Los detalles de cada proveedor están en el Manual de instalación, sección 9.
 
 ### 7.5 Comprobar el estado
 
-- **¿Está en funcionamiento?** `GET /health` responde `{"status":"ok"}`.
+- **¿Está en funcionamiento?** `make estado` responde `{"status":"ok"}`.
 - **¿Están activas las protecciones?** `GET /v1/seguridad/estado` (sección 4.4), o la primera línea que muestra el gateway al arrancar.
 
 ## 8. Registro de auditoría
@@ -316,22 +306,16 @@ Buscar qué pasó con una solicitud concreta:
 grep '41bbfe68765947be' logs/gateway.jsonl
 ```
 
-En PowerShell:
-
-```powershell
-Select-String -Path logs\gateway.jsonl -Pattern '41bbfe68765947be'
-```
-
 Ver los intentos de manipulación bloqueados:
 
 ```bash
 grep 'bloqueado_llm01' logs/gateway.jsonl
 ```
 
-Resumen de resultados (funciona en cualquier sistema):
+Resumen de resultados:
 
 ```bash
-python -c "import json,collections; print(collections.Counter(json.loads(l).get('resultado') for l in open('logs/gateway.jsonl', encoding='utf-8') if '\"solicitud\"' in l))"
+venv/bin/python -c "import json,collections; print(collections.Counter(json.loads(l).get('resultado') for l in open('logs/gateway.jsonl', encoding='utf-8') if '\"solicitud\"' in l))"
 ```
 
 ```text
@@ -355,21 +339,23 @@ Esta sección permite comprobar, sin API keys ni costo, que cada protección det
 ### 9.1 Comprobación automática
 
 ```bash
-python -m pytest -v
-python scripts/demo_antes_despues.py
+make verificar
+make test
+make evidencia
 ```
 
-- **`pytest`** ejecuta 63 pruebas (puede mostrar un aviso, `1 warning`, que es inofensivo). Por cada protección hay una prueba que demuestra que el ataque **funciona** sin ella (`test_linea_base_…`) y otra que demuestra que queda **bloqueado** con ella (`test_con_mitigacion_…`).
-- **`demo_antes_despues.py`** ejecuta seis escenarios, muestra una tabla comparativa y genera `docs/evidencias/REPORTE_EVIDENCIA.md`.
+- **`make verificar`** arranca el gateway, hace seis comprobaciones con solicitudes reales y lo detiene.
+- **`make test`** ejecuta 63 pruebas (puede mostrar un aviso, `1 warning`, que es inofensivo). Por cada protección hay una prueba que demuestra que el ataque **funciona** sin ella (`test_linea_base_…`) y otra que demuestra que queda **bloqueado** con ella (`test_con_mitigacion_…`).
+- **`make evidencia`** ejecuta seis escenarios, muestra una tabla comparativa y genera `docs/evidencias/REPORTE_EVIDENCIA.md`.
 
 ### 9.2 Demostración en vivo
 
-Se usan dos terminales: en la primera corre el gateway y en la segunda se lanzan los ataques. En Windows use **Git Bash** para ambas.
+Se usan dos terminales en la máquina Linux (en Codespaces, el botón **+** abre la segunda): en la primera corre el gateway y en la segunda se lanzan los ataques.
 
 Terminal 2, una sola vez:
 
 ```bash
-export GW_KEY=gw_...su_clave...
+export GW_KEY=$(cat .gw_key)
 export GW_KEY_2=gw_...clave_de_otra_aplicacion...   # opcional: demuestra que el límite es por clave
 ```
 
@@ -377,12 +363,12 @@ Para cada protección, arranque el gateway **sin** ella, lance el ataque, detén
 
 | Protección | Arranque sin protección (terminal 1) | Ataque (terminal 2) |
 |---|---|---|
-| Manipulación del modelo (LLM01) | `MITIGACION_LLM01=false uvicorn gateway.main:app --port 8000` | `./scripts/ataques_en_vivo.sh llm01` |
-| Fuga de instrucciones (LLM07) | `MITIGACION_LLM01=false MITIGACION_LLM07=false uvicorn gateway.main:app --port 8000` | `./scripts/ataques_en_vivo.sh llm07` |
-| Consumo sin límite (LLM10) | `MITIGACION_LLM10=false uvicorn gateway.main:app --port 8000` | `./scripts/ataques_en_vivo.sh llm10` |
-| Fuga de información (LLM02) | `MITIGACION_LLM02=false SIMULAR_FALLA_UPSTREAM=error_con_clave uvicorn gateway.main:app --port 8000` | `./scripts/ataques_en_vivo.sh llm02` |
+| Manipulación del modelo (LLM01) | `make linea-base M=LLM01` | `./scripts/ataques_en_vivo.sh llm01` |
+| Fuga de instrucciones (LLM07) | `MITIGACION_LLM01=false make linea-base M=LLM07` | `./scripts/ataques_en_vivo.sh llm07` |
+| Consumo sin límite (LLM10) | `make linea-base M=LLM10` | `./scripts/ataques_en_vivo.sh llm10` |
+| Fuga de información (LLM02) | `SIMULAR_FALLA_UPSTREAM=error_con_clave make linea-base M=LLM02` | `./scripts/ataques_en_vivo.sh llm02` |
 
-Arranque con todas las protecciones: `uvicorn gateway.main:app --port 8000`.
+Arranque con todas las protecciones: `make protegido`. Para LLM07, con la entrada todavía apagada: `MITIGACION_LLM01=false make protegido`. Para LLM02, con el mismo fallo simulado: `SIMULAR_FALLA_UPSTREAM=error_con_clave make protegido`. Detenga el gateway con `Ctrl + C` entre un arranque y el siguiente.
 
 | Protección | Resultado sin protección | Resultado con protección |
 |---|---|---|

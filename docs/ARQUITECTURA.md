@@ -73,6 +73,8 @@ proyecto_04_gateway_llm/
 │   └── logging_seguro.py  ← LLM02: formateador JSON allowlist + redacción
 ├── tests/                 ← 63 pruebas: línea base vs. protegido por mitigación
 ├── scripts/
+│   ├── instalar.sh             ← instalación automática en Linux
+│   ├── prueba_humo.sh          ← verificación de punta a punta
 │   ├── demo_antes_despues.py   ← evidencia reproducible → docs/evidencias/REPORTE_EVIDENCIA.md
 │   ├── ataques_en_vivo.sh      ← curl contra el servidor (para el video)
 │   ├── escanear_secretos.py    ← código + historial git + logs
@@ -85,7 +87,8 @@ proyecto_04_gateway_llm/
 │   ├── GUION_VIDEO.md
 │   └── evidencias/             ← reporte + logs del modo protegido
 ├── entregables/            ← Word del mapeo, video y subtítulos
-├── .github/workflows/ci.yml ← pruebas + escáner de secretos en cada push
+├── .github/workflows/ci.yml ← instalador + pruebas + prueba de humo en cada push
+├── .devcontainer/           ← GitHub Codespaces: Linux con todo instalado
 ├── Dockerfile · Makefile · requirements.txt · .env.example · .gitignore
 ```
 

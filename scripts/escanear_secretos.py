@@ -46,7 +46,7 @@ def _archivos() -> list[Path]:
         return [RAIZ / linea for linea in salida.splitlines() if linea]
     except (subprocess.CalledProcessError, FileNotFoundError):
         return [p for p in RAIZ.rglob("*") if p.is_file() and not (set(p.relative_to(RAIZ).parts) & EXCLUIR_DIRS)
-                and p.name != ".env"]
+                and p.name not in {".env", ".gw_key"}]
 
 
 def _buscar(texto: str, origen: str) -> list[str]:

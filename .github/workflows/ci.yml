@@ -4,13 +4,14 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:   # permite lanzarlo a mano desde la pestaña Actions
 
 permissions:
   contents: read
 
 jobs:
   verificar:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest   # máquina de prueba Linux de GitHub
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,8 +20,9 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
-      - name: Pruebas antes/después (63)
-        run: python -m pytest -v
-      - name: Escáner de secretos (código + historial git)
-        run: python scripts/escanear_secretos.py
+      - name: Instalar con el mismo instalador del manual (incluye 63 pruebas y escáner de secretos)
+        run: bash scripts/instalar.sh
+      - name: Prueba de humo — arrancar el gateway y hacer solicitudes reales
+        run: bash scripts/prueba_humo.sh
+      - name: Evidencia antes/después de cada mitigación
+        run: venv/bin/python scripts/demo_antes_despues.py

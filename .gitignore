@@ -1,11 +1,14 @@
 # Secretos
 .env
+.gw_key
 *.pem
 *.key
 secrets/
 # Logs de ejecución y evidencias INSEGURAS de línea base (contienen claves falsas/PII ficticia)
 logs/
 evidencias_inseguras/
+# Proceso en segundo plano (make iniciar)
+.gateway.pid
 # Python
 venv/
 .venv/

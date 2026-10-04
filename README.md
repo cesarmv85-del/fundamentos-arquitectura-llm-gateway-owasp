@@ -27,27 +27,33 @@ Backend FastAPI que actúa como **única puerta** entre las aplicaciones de la o
 
 ![Vista de contexto del gateway](docs/arquitectura/01_vista_contexto.png)
 
-## Quick start (sin API keys)
+## Instalación rápida en Linux (sin API keys)
+
+[![Abrir en GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/cesarmv85-del/fundamentos-arquitectura-llm-gateway-owasp)
+
+**En GitHub Codespaces:** el botón de arriba crea una máquina Linux con todo instalado. Luego: `make verificar`.
+
+**En cualquier Linux** (Ubuntu/Debian con `python3 python3-venv python3-pip git curl make`):
 
 ```bash
-git clone https://github.com/cesarmv85-del/fundamentos-arquitectura-llm-gateway-owasp.git && cd fundamentos-arquitectura-llm-gateway-owasp
-python3.12 -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
+git clone https://github.com/cesarmv85-del/fundamentos-arquitectura-llm-gateway-owasp.git
+cd fundamentos-arquitectura-llm-gateway-owasp
+bash scripts/instalar.sh      # entorno virtual, dependencias, .env, primera clave, 63 pruebas
+bash scripts/prueba_humo.sh   # arranca el gateway, hace solicitudes reales y lo detiene
 
-# 1. Emitir una clave de cliente (el gateway solo guarda su SHA-256)
-python scripts/generar_clave_cliente.py equipo_soporte
-#    → pegue "equipo_soporte:<hash>" en GATEWAY_CLIENT_KEYS_SHA256 del .env
-export GW_KEY=gw_...   # la clave impresa
+make protegido                # arrancar (o: make iniciar, en segundo plano)
+```
 
-# 2. Levantar el gateway (proveedor simulado por defecto)
-uvicorn gateway.main:app --port 8000
+En otra terminal:
 
-# 3. Usarlo
+```bash
+export GW_KEY=$(cat .gw_key)
 curl -s -X POST localhost:8000/v1/chat \
   -H "Authorization: Bearer $GW_KEY" -H "Content-Type: application/json" \
   -d '{"mensaje":"¿Puedo devolver un producto que compré hace 20 días?"}'
 ```
+
+Detalle completo, prerrequisitos y solución de problemas en el [Manual de instalación](docs/MANUAL_INSTALACION.md).
 
 ## Evidencia antes / después
 
