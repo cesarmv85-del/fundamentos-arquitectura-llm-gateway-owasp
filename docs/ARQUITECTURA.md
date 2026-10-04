@@ -82,6 +82,8 @@ proyecto_04_gateway_llm/
 │   ├── ARQUITECTURA.md         ← este archivo
 │   ├── GUION_VIDEO.md
 │   └── evidencias/             ← reporte + logs del modo protegido
+├── entregables/            ← Word del mapeo, video y subtítulos
+├── .github/workflows/ci.yml ← pruebas + escáner de secretos en cada push
 ├── Dockerfile · Makefile · requirements.txt · .env.example · .gitignore
 ```
 

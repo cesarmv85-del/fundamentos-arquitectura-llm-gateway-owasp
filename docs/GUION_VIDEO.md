@@ -1,6 +1,6 @@
 # Guion del video (≤ 30 minutos)
 
-> **Video generado:** `Video_Gateway_LLM_OWASP.mp4` (22 min 40 s, 1080p) con subtítulos en `docs/Video_Gateway_LLM_OWASP.srt`.
+> **Video generado:** `entregables/Video_Gateway_LLM_OWASP.mp4` (22 min 40 s, 1080p) con subtítulos en `entregables/Video_Gateway_LLM_OWASP.srt`.
 > Las demos de terminal son ejecuciones reales del gateway (`uvicorn` + `curl`) capturadas y animadas; la narración usa voz sintética en español.
 > Este guion sirve para regrabar el video con voz propia o en pantalla en vivo.
 

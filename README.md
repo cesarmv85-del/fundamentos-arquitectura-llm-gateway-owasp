@@ -1,6 +1,8 @@
 # Gateway LLM Propio con Seguridad de Nivel Producción
 
-**Proyecto Final · Opción 4** — Fundamentos de Arquitectura LLM (BSG Institute)
+[![Pruebas y secretos](https://github.com/cesarmv85-del/fundamentos-arquitectura-llm-gateway-owasp/actions/workflows/ci.yml/badge.svg)](https://github.com/cesarmv85-del/fundamentos-arquitectura-llm-gateway-owasp/actions/workflows/ci.yml)
+
+**Proyecto Final · Opción 4** — Fundamentos de Arquitectura LLM (BSG Institute) · Autor: César ([@cesarmv85-del](https://github.com/cesarmv85-del))
 *El marco OWASP Top 10 para LLMs (2025), aplicado — no solo citado.*
 
 Backend FastAPI que actúa como **única puerta** entre las aplicaciones de la organización y los proveedores de LLM (OpenAI, Anthropic, Google Gemini, Ollama o un proveedor simulado), con cuatro mitigaciones OWASP **demostrables en vivo**, cada una con su caso de ataque antes/después.
@@ -12,11 +14,22 @@ Backend FastAPI que actúa como **única puerta** entre las aplicaciones de la o
 | LLM07 System Prompt Leakage | Token canario + detector de n-gramas sobre la salida | `gateway/salida.py` |
 | LLM10 Unbounded Consumption | Rate limit **por clave** (slowapi), techo de `max_tokens`, límite de body, timeouts | `gateway/main.py` |
 
-📄 **Entregable central:** [`docs/MAPEO_OWASP.md`](docs/MAPEO_OWASP.md) · Arquitectura: [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md) · Video: [`docs/GUION_VIDEO.md`](docs/GUION_VIDEO.md) · Evidencia generada: [`docs/evidencias/REPORTE_EVIDENCIA.md`](docs/evidencias/REPORTE_EVIDENCIA.md)
+## Entregables
+
+| Entregable del enunciado | Dónde está |
+|---|---|
+| Repositorio con el gateway funcional | Este repositorio: [`gateway/`](gateway/) |
+| Documento de mapeo OWASP → mitigación → evidencia | [`docs/MAPEO_OWASP.md`](docs/MAPEO_OWASP.md) · versión Word: [`entregables/Mapeo_OWASP_Gateway_LLM.docx`](entregables/Mapeo_OWASP_Gateway_LLM.docx) |
+| Casos de prueba con línea base (antes/después) | [`tests/`](tests/) (63 pruebas) · [`scripts/demo_antes_despues.py`](scripts/demo_antes_despues.py) · [`docs/evidencias/REPORTE_EVIDENCIA.md`](docs/evidencias/REPORTE_EVIDENCIA.md) |
+| Video explicativo (22:40 min) | [`entregables/Video_Gateway_LLM_OWASP.mp4`](entregables/Video_Gateway_LLM_OWASP.mp4) · subtítulos [`.srt`](entregables/Video_Gateway_LLM_OWASP.srt) · guion [`docs/GUION_VIDEO.md`](docs/GUION_VIDEO.md) |
+| Diseño de arquitectura | [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md) · 6 diagramas en [`docs/arquitectura/`](docs/arquitectura/) |
+
+![Vista de contexto del gateway](docs/arquitectura/01_vista_contexto.png)
 
 ## Quick start (sin API keys)
 
 ```bash
+git clone https://github.com/cesarmv85-del/fundamentos-arquitectura-llm-gateway-owasp.git && cd fundamentos-arquitectura-llm-gateway-owasp
 python3.12 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
