@@ -7,4 +7,5 @@ Makefile text eol=lf
 # Binarios
 *.png binary
 *.docx binary
+*.pdf binary
 *.mp4 binary

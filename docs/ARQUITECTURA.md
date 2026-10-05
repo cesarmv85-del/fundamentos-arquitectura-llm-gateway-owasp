@@ -86,7 +86,7 @@ proyecto_04_gateway_llm/
 │   ├── ARQUITECTURA.md         ← este archivo
 │   ├── GUION_VIDEO.md
 │   └── evidencias/             ← reporte + logs del modo protegido
-├── entregables/            ← Word del mapeo, video y subtítulos
+├── entregables/            ← PDF del mapeo y de los manuales, video y subtítulos
 ├── .github/workflows/ci.yml ← instalador + pruebas + prueba de humo en cada push
 ├── .devcontainer/           ← GitHub Codespaces: Linux con todo instalado
 ├── Dockerfile · Makefile · requirements.txt · .env.example · .gitignore

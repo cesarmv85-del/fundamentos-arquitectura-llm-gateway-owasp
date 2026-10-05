@@ -19,10 +19,10 @@ Backend FastAPI que actúa como **única puerta** entre las aplicaciones de la o
 | Entregable del enunciado | Dónde está |
 |---|---|
 | Repositorio con el gateway funcional | Este repositorio: [`gateway/`](gateway/) |
-| Documento de mapeo OWASP → mitigación → evidencia | [`docs/MAPEO_OWASP.md`](docs/MAPEO_OWASP.md) · versión Word: [`entregables/Mapeo_OWASP_Gateway_LLM.docx`](entregables/Mapeo_OWASP_Gateway_LLM.docx) |
+| Documento de mapeo OWASP → mitigación → evidencia | [`docs/MAPEO_OWASP.md`](docs/MAPEO_OWASP.md) · versión PDF: [`entregables/Mapeo_OWASP_Gateway_LLM.pdf`](entregables/Mapeo_OWASP_Gateway_LLM.pdf) |
 | Casos de prueba con línea base (antes/después) | [`tests/`](tests/) (63 pruebas) · [`scripts/demo_antes_despues.py`](scripts/demo_antes_despues.py) · [`docs/evidencias/REPORTE_EVIDENCIA.md`](docs/evidencias/REPORTE_EVIDENCIA.md) |
 | Video explicativo (22:40 min) | [`entregables/Video_Gateway_LLM_OWASP.mp4`](entregables/Video_Gateway_LLM_OWASP.mp4) · subtítulos [`.srt`](entregables/Video_Gateway_LLM_OWASP.srt) · guion [`docs/GUION_VIDEO.md`](docs/GUION_VIDEO.md) |
-| Manuales | Instalación: [`docs/MANUAL_INSTALACION.md`](docs/MANUAL_INSTALACION.md) · [Word](entregables/Manual_Instalacion_Gateway_LLM.docx) — Usuario: [`docs/MANUAL_USUARIO.md`](docs/MANUAL_USUARIO.md) · [Word](entregables/Manual_Usuario_Gateway_LLM.docx) |
+| Manuales | Instalación: [`docs/MANUAL_INSTALACION.md`](docs/MANUAL_INSTALACION.md) · [PDF](entregables/Manual_Instalacion_Gateway_LLM.pdf) — Usuario: [`docs/MANUAL_USUARIO.md`](docs/MANUAL_USUARIO.md) · [PDF](entregables/Manual_Usuario_Gateway_LLM.pdf) |
 | Diseño de arquitectura | [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md) · 6 diagramas en [`docs/arquitectura/`](docs/arquitectura/) |
 
 ![Vista de contexto del gateway](docs/arquitectura/01_vista_contexto.png)
